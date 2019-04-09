@@ -1,2 +1,2 @@
 # Project Report
-## Group members
+## Zachary Andrews, Devin Spitalny, Christian Lussier

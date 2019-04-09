@@ -1,2 +1,2 @@
-# Progress report
-## Group members
+# Progress Report
+## Zachary Andrews, Devin Spitalny, Christian Lussier

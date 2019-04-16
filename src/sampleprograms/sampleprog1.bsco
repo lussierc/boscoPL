@@ -1,5 +1,4 @@
 ?? Bosco Language - First Sample Program.
-
 woof classBosco:
   bone myFunction-:
     int x = 2|

@@ -18,7 +18,7 @@ woof, bone, speak, dig, int, double, fetch
 
 Though there are more reserved keywords, all of these will be useful for our programming language. For example, `woof` will be used for classes, `bone` will be used for functions, `speak` will be used to print things to the terminal, and `dig` will be used as a simple loop (like a for loop). These keywords will play a large role in program structure and functionality.
 
-After determining our reserved keywords, we came up with a sample program to get a general idea of what our languages programs would like. This sample program can be found in `src/sampleprograms/sampleprog1.bsco`. This sample program should be useful for testing our scanner/parser when it is complete. Additionally, this sample program will be good to look at to refresh our memories on the grammar we created and get a general idea of how a program will be structured in the Bosco programming language.
+After determining our reserved keywords, we came up with a sample program to get a general idea of what our languages programs would like. This sample program can be found in `test/sampleprog1.bsco`. This sample program should be useful for testing our scanner/parser when it is complete. Additionally, this sample program will be good to look at to refresh our memories on the grammar we created and get a general idea of how a program will be structured in the Bosco programming language.
 
 Here is part of the Bosco sample program, that gives a general idea of the programming language's structure, in its current state:
 ```

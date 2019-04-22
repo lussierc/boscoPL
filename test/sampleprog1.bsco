@@ -1,18 +1,18 @@
 ?? Bosco Language - First Sample Program.
 woof classBosco:
   bone myFunction-:
-    int x = 2|
-    int y = 17|
-    int z = x + y|
-    bool w = true|
-    speak-z|  ?? This is my comment. Here we are printing.
+    ??int x = 2|
+    ??int y = 17|
+    ??int z = x + y|
+    ??bool w = true|
+    ??speak-z|  ?? This is my comment. Here we are printing.
   :
-  bone myOtherFunction-:
-    speak-"I am Bosco. I am speaking woof woof."|
-    dig-i = 0| i < 10| i++:
-      speak-i|
-    :
-  :
-  myOtherFunction-| ?? I am calling my function
+  ??bone myOtherFunction-:
+    ??speak-"I am Bosco. I am speaking woof woof."|
+    ??dig-i = 0| i < 10| i++:
+      ??speak-i|
+    ??:
+  ??:
+  ??myOtherFunction-| ?? I am calling my function
 :
 ?? End of program

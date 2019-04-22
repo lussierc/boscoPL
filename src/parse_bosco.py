@@ -14,15 +14,14 @@ tokens = [
 
 tokens += list(reserved.values())
 
-# define the values that can be in an int
-# TODO: get hexadecimal format working
-def t_INT(t):
-    r'((0X){1}([0-9A-F]|[0-9a-f])+|\d+)'
-    return t
-
 # define the values that can be in a double
 def t_DOUBLE(t):
-    r'[-+]?[0-9]+(\.([0-9]+)?([eE][-+]?[0-9]+)?|[eE][-+]?[0-9]+)'
+    r'[0-9]*\.[0-9]+'
+    return t
+
+# define the values that can be in an int
+def t_INT(t):
+    r'[0-9]+'
     return t
 
 # defines the values that can make up a string
@@ -30,14 +29,13 @@ def t_STRING(t):
     r'\"(.*?)\"'
     return t
 
-# def t_BOOL(t):
-#     r'(' + TRUE + r'|' +FALSE + r')'
-#     return t
+def t_BOOL(t):
+    r'true\b|false\b'
+    return t
 
 # define the values that can be part of an identifier
-# TODO: put cap on number of characters (31)
 def t_ID(t):
-    r'[a-zA-Z_][a-zA-Z0-9_]{0,31}'
+    r'[a-zA-Z_][a-zA-Z0-9_]{0,32}'
     t.type = reserved.get(t.value,'ID')    # Check for reserved words
     return t
 
@@ -66,7 +64,7 @@ t_ignore = " \t"
 
 # defines what a single and multi-line comment should look like
 def t_COMMENT(t):
-    r'\?\? (.*?)'
+    r'\?\? (.*)'
     t.lexer.lineno += t.value.count("\n")
     pass
 
@@ -80,16 +78,44 @@ def t_error(t):
     print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
 
+"""Parser stuff"""
+import ply.yacc as yacc
+
+precedence = (
+     ('left', 'PLUS', 'MINUS'),
+     ('left', 'MULT', 'DIV'),
+ )
+
+def p_Program(t):
+    '''Program : Decl'''
+
+def p_Decl(t):
+    '''Decl : ClassDecl
+            | FuncDecl
+            | VarDecl
+            | R_Decl'''
+
+def p_ClassDecl(t):
+    '''ClassDecl : WOOF ID COLON Field COLON'''
+
+def p_FuncDecl(t):
+    '''FuncDecl : BONE ID MINUS R_Field COLON StmtBlock'''
+
+def p_VarDecl(t):
+    '''VarDecl : Var BAR'''
+
+def p_Var(t):
+    '''Var : Type ID'''
+
+def p_R_Decl(t):
+    '''R_Decl : Decl R_Decl
+              | Empty'''
+
+def p_Empty(t):
+    '''Empty : '''
+    pass
+
 # checks if there is a file path supplied as an argument, if not asks for one on run
-try:
-    import sys
-    path = sys.argv[1]
-except:
-    print("No file supplied as an argument, please give one now")
-    path = input(">> ")
-
-
-# gets each line in the inputed # checks if there is a file path supplied as an argument, if not asks for one on run
 try:
     import sys
     path = sys.argv[1]
@@ -107,20 +133,14 @@ except:
     print("File not found")
 import ply.lex as lex
 lexer = lex.lex()
-# Give the lexer some input file and passes it to the parser
-lexer.input(data)
-data = ""
-try:
-    with open(path) as f:
-        data = f.read()
-except:
-    print("File not found")
-import ply.lex as lex
-lexer = lex.lex()
 # Give the lexer some input
 lexer.input(data)
+# tokenizes and prints out each token
 while True:
-    tok = lexer.token()
-    if not tok:
-        break
-    print(tok)
+ tok = lexer.token()
+ if not tok:
+     break
+ print(tok)
+
+ # parser = yacc.yacc()
+ # parser.parse(data)

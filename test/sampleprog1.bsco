@@ -4,6 +4,7 @@ woof classBosco:
     int x = 2|
     int y = 17|
     int z = x + y|
+    bool w = true|
     speak-z|  ?? This is my comment. Here we are printing.
   :
   bone myOtherFunction-:

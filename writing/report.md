@@ -16,17 +16,15 @@ While our programming language doesn't solve a specific, real-world applicable p
 
 There actually are already dog-inspired programming languages that are publicly availably. However, until the week before the report was due, we had no idea that a dog-related toy programming language existed. Despite this, there is a language called ["DOG"](https://esolangs.org/wiki/DOG) which is very much dog-related. Created by Jeremy Ruten, the programs for this language use commands that are supposed to look like commands that you would give to a dog. For instance, "fetch" is used to add, "drop" is used to subtract, and "bark" is used to print. It is extremely simple, with no real mainstream formatting, unlike that which appears in Java such as the use of brackets ({}) to denote where the body of methods and classes appear.
 
-As mentioned earlier, one other fun-motivated programming language is Trump Script. Trump Script is based on Donald Trump phrases and speaking habits. While it is not super-functional by any means, it is quite interesting and fun if you follow American politics. In this sense it was a motivation for our program, as it strived to create a fun and real-world relevant programming language.
+As mentioned earlier, one other fun-inspired programming language is Trump Script. Trump Script is based on Donald Trump phrases and speaking habits. While it is not super-functional by any means, it is quite interesting and fun if you follow American politics. In this sense it was a motivation for our program, as it strived to create a fun and real-world relevant programming language.
 
 ### References:
 - "DOG" Programming Language: https://esolangs.org/wiki/DOG
 - Trump Script: https://github.com/samshadwell/TrumpScript
+
 ## Overview of Completed Work
 <!-- Detailed description of the work you completed for this project. Without giving a snap- shot of the code you wrote, describe what you implemented and how you implemented it. -->
-## Overview of Results
- <!-- Description of your results. Make graphs, tables, snapshot of output, or anything else that can help me understand your results. -->
-## Conclusion
-<!-- Conclusion. Give a short overview of your project and its results. Describe what you learned, what were the biggest challenges and the biggest rewards. -->
+Once we finalized the idea for our project, we completed work in a variety of different areas. The first of these areas was creating a grammar for our project. We took the time to create a grammar (that Bosco himself would love) that contained a lot of whimsical dog-related elements. For example, our reserved keywords included `woof`, `bone`, `speak`, `dig`, `int`, `double`, `fetch`, and more. For instance, `woof` will be used for classes, `bone` will be used for functions, `speak` will be used to print things to the terminal, and `dig` will be used as a simple loop (like a for loop). These keywords will play a large role in program structure and functionality.
 
 Grammar:
 ```
@@ -51,3 +49,8 @@ Actuals ::= Expr+, | ε
 Type ::= int | double | bool | string
 Constant ::= intConstant | doubleConstant | boolConstant | stringConstant | null
 ```
+
+## Overview of Results
+ <!-- Description of your results. Make graphs, tables, snapshot of output, or anything else that can help me understand your results. -->
+## Conclusion
+<!-- Conclusion. Give a short overview of your project and its results. Describe what you learned, what were the biggest challenges and the biggest rewards. -->

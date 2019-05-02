@@ -1,4 +1,4 @@
-# CS401 Project Report
+# CS401 Project - Final Report
 ### Zachary Andrews, Devin Spitalny, Christian Lussier
 
 ## Introduction
@@ -129,7 +129,7 @@ Syntax error in input
 ```
 As shown above, the scanner properly recognizes the input tokens existing in the program given as an argument. However, the bottom two lines of the program are where the issues with our parser begin. When completing debugging tasks these issues become more detailed and specific, but despite this it was hard to figure out exactly what was causing the parser to fail. Even with every group member looking through the source code multiple times and using a variety of testing methods, we were unable to find the bug. This resulted in the production of only a partially working scanner and parser combination program, with the scanner being seemingly functional and the parser encountering issues that were detrimental to its functionality.
 
-To test our scanner and parser we created a few sample programs. Here is a snippet of one of the sample programs:
+To test our scanner and parser we created a few sample programs that showed off the main parts of Bosco's grammar and syntax. Here is a snippet of one of the sample programs:
 ```
 bone myOtherFunction-:
   speak-"I am Bosco. I am speaking woof woof."|
@@ -143,3 +143,5 @@ The above snippet contains a function, a `speak` statement to print to the termi
 
 ## Conclusion
 <!-- Conclusion. Give a short overview of your project and its results. Describe what you learned, what were the biggest challenges and the biggest rewards. -->
+
+For our project we set out to create a simple yet fun programming language called Bosco. We were able to successfully create a grammar that included dog-related elements (in honor of Bosco) and with this grammar we were able to construct sample programs to show how a regular Bosco program would look. Creating the grammar was slightly challenging as we had to be creative and think of how dog-esque elements could be included in a way that made sense. After this, we took steps to create a scanner and parser combination program that would serve as a lexer and parser for the project's grammar. Unfortunately, while our scanner functioned as intended, scanning in keywords and tokens with no issue, our parser did not. This was undoubtedly the most challenging portion of the lab because we ran into an number of errors that we could not fix when writing the parser code. Despite each group member spending hours to try and fix these issues, we simply could not figure out what was causing the parser to fail. Despite these failure-inducing challenges, this project provided a variety of rewarding moments to our group. For instance, it was very enjoyable to pursue the novel idea of creating a programming language from scratch and being able to write programs in our language after constructing our grammar. Additionally, it was also very rewarding when we were able to get our scanner to work with our grammar. While our Bosco programming language's parser did not end up working, creating a grammar and scanner were rewarding moments and good learning experience for our group during the completion of this project. 

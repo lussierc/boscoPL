@@ -14,12 +14,13 @@ bone doMath-a,b,c:
 
   ?? Print the last result to terminal:
   speak-mult|
+: ?? End of bone
 
-  ?? End of bone
-?? End of program
 
 int a = 5|
 int b = 10|
 int c = 15|
 
 doMath-a,b,c|
+
+?? End of program

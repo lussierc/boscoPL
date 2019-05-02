@@ -17,3 +17,9 @@ bone doMath-a,b,c:
 
   ?? End of bone
 ?? End of program
+
+int a = 5|
+int b = 10|
+int c = 15|
+
+doMath-a,b,c|

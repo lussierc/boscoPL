@@ -28,7 +28,7 @@ python3 parse_bosco.py FILENAME.bsco
 To run Bosco's scanner/parser with one of the sample programs located in the `test`
 directory, first follow the steps above.
 
-For running the project with `sampleprog1.bsco` use the command:
+For running the project with `basicsyntax.bsco` use the command:
 ```
 python3 parse_bosco.py ../test/sampleprog1.bsco
 ```

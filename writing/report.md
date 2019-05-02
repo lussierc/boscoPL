@@ -26,7 +26,7 @@ As mentioned earlier, one other fun-inspired programming language is Trump Scrip
 <!-- Detailed description of the work you completed for this project. Without giving a snap- shot of the code you wrote, describe what you implemented and how you implemented it. -->
 Once we finalized the idea for our project, we completed work in a variety of different areas. The first of these areas was creating a grammar for our project. We took the time to create a grammar (that Bosco himself would love) that contained a lot of whimsical dog-related elements. For example, our reserved keywords included `woof`, `bone`, `speak`, `dig`, `int`, `double`, `fetch`, and more. For instance, `woof` will be used for classes, `bone` will be used for functions, `speak` will be used to print things to the terminal, and `dig` will be used as a simple loop (like a for loop). These keywords will play a large role in program structure and functionality. Additionally, we also decided that `??` would be used to denote single-line comments (because Bosco gets a little bit confused sometimes).
 
-Once we completed creating our grammar, we wrote a sample program for the Bosco language to get a general idea of how it would function. This first sample program, entitled `basicsyntax.bsco` included loops, functions, and variable declarations. With this it included some simple mathematical operations on these variables and `speak` statements to print output to the terminal.
+Once we completed creating our grammar, we wrote a sample program for the Bosco language to get a general idea of how it would function. This first sample program, entitled `basicSyntax.bsco` included loops, functions, and variable declarations. With this it included some simple mathematical operations on these variables and `speak` statements to print output to the terminal.
 
 After finalizing our grammar and writing a sample program, we began the implementation portion of our project. This involved implementing a scanner and parser for our new Bosco language to use with our created sample programs. To start, we began by
 
@@ -61,7 +61,7 @@ Constant ::= intConstant | doubleConstant | boolConstant | stringConstant | null
 
 After creating our grammar, we worked to create a scanner and parser utilizing it. The result for this task did not end as successfully as we wished. We created a working scanner and a semi-working parser, but we could just not figure out how to fix some of the issues the parser was encountering. This was by far the most challenging part of the project as we ran into a variety of issues while trying to get our scanner and parser to work.
 
-Here is the current output from running the scanner/parser combination on `basicsyntax.bsco`:
+Here is the current output from running the scanner/parser combination on `basicSyntax.bsco`:
 ```
 LexToken(WOOF,'woof',2,42)
 LexToken(ID,'classBosco',2,47)

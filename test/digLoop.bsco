@@ -1,18 +1,13 @@
 ?? Bosco Language - Sample Program 3
 ?? Usage of dig loop
-
-bone useLoop-z:
-  int x = 9|
-  int y = z + x|
-
-  dig-i = 0| i < y| i++:
-    speak-"An Iteration!"|
-    speak-i|
-  :
+woof digLoop:
+  bone useLoop -int z- (
+    int x = 9|
+    int y = z + x|
+    dig i = 0| i < y| i = i + 1 (
+      speak-"An Iteration!"|
+      speak-i|
+    )
+  )
 :
-
-int z = 1|
-
-useLoop-z| ?? Call function with variable z
-
 ?? End of program

@@ -1,10 +1,6 @@
 # CS401 Project - Final Report
 ### Zachary Andrews, Devin Spitalny, Christian Lussier
 
-<<<<<<< HEAD
-Grammar:
-
-=======
 ## Introduction
 For our CS401 Final Project, we decided to create a toy programming language, much like the ones discussed in class. When coming up with a name for our simple language, our minds immediately jumped to the lovable dog and unofficial Allegheny Computer Science mascot, Bosco. With this in mind we set about creating our new Bosco programming language, drawing inspiration from other languages such as Java and Python as well as toy languages such as Decaf and C0. We created a basic grammar for our language with dog-related elements, including dog phrases like "woof" and "bone" to add a dog flair of sorts. Additionally, we also took steps to create a simple scanner/parser for our language. When creating Bosco, we tried to create a fun and easy to understand grammar that would work well with our scanner and parser.
 
@@ -42,15 +38,14 @@ After this we were able to begin testing our scanner with our created sample pro
 While completing this project and completing a variety of work, we produced a variety of mixed results. The first of these was the successful creation of a grammar with dog-related elements.
 
 The Bosco Grammar:
->>>>>>> b70f45d253fc17b3128752b2e341092fbc0ba066
 ```
 Program ::== Decl+
 Decl ::= BoneDecl | WoofDecl | VarDecl
-WoofDecl ::= woof ID: Field* :
-BoneDecl ::= bone ID- Formals: StmtBlock
+WoofDecl ::= woof ID : Field* :
+BoneDecl ::= bone ID - Formals - StmtBlock
 Var ::= Type ID
 VarDecl ::= Var\|
-StmtBlock ::= : VarDecl* Stmt* :
+StmtBlock ::= ( VarDecl* Stmt* )
 Stmt ::= 〈Expr〉 \| | IfStmt | DigStmt | BreakStmt | ReturnStmt | SpeakStmt | StmtBlock
 Field ::= VarDecl | FuncDecl
 Formals ::= Variable+, | ε
@@ -58,23 +53,21 @@ SpeakStmt ::= Speak- Expr+, \|
 IfStmt ::= if ( Expr ) Stmt 〈else Stmt〉
 ReturnStmt ::= return〈Expr〉\|
 BreakStmt ::= break\|
-<<<<<<< HEAD
-DigStmt ::= dig- Type ID Expr|Expr|Expr: Stmt
-Expr ::= LValue = Expr | Constant | LValue | this | ( Expr ) | Expr+Expr | Expr-Expr |
-  Expr*Expr | Expr/Expr | Expr%Expr | - Expr | Expr < Expr | Expr <= Expr | Expr > Expr |
-  Expr >= Expr | Expr == Expr | Expr != Expr | Expr && Expr | Expr || Expr | ! Expr |
-FetchInteger ( ) | FetchLine ( )
-=======
-DigStmt ::= dig- Type ID Expr| Expr | Expr: Stmt
-Expr ::= LValue = Expr | Constant | LValue | this | ( Expr ) | Expr+Expr | Expr-Expr | Expr*Expr | Expr/Expr | Expr%Expr | - Expr | Expr < Expr | Expr <= Expr | Expr > Expr | Expr >= Expr | Expr == Expr | Expr != Expr | Expr && Expr | Expr || Expr | ! Expr | FetchInteger ( ) | FetchLine ( )
->>>>>>> b70f45d253fc17b3128752b2e341092fbc0ba066
+DigStmt ::= dig Expr| Expr | Expr StmtBlock
+Expr ::= LValue = Expr | Constant | LValue | ( Expr ) | Expr+Expr | Expr-Expr | Expr*Expr | Expr/Expr | Expr%Expr | - Expr | Expr < Expr | Expr <= Expr | Expr > Expr | Expr >= Expr | Expr == Expr | Expr != Expr | Expr && Expr | Expr || Expr | ! Expr | FetchInteger ( ) | FetchLine ( )
 LValue ::= indent (Actuals) | Expr . indent (Actuals)
 Actuals ::= Expr+, | ε
 Type ::= int | double | bool | string
 Constant ::= intConstant | doubleConstant | boolConstant | stringConstant | null
 ```
 
-After creating our grammar, we worked to create a scanner and parser utilizing it. The result for this task did not end as successfully as we wished. We created a working scanner and a semi-working parser, but we could just not figure out how to fix some of the issues the parser was encountering. This was by far the most challenging part of the project as we ran into a variety of issues while trying to get our scanner and parser to work.
+After creating our grammar, we worked to create a scanner and parser utilizing it. Getting
+the parser to work properly was a hard process that took a lot of trial and error to get
+working. Ultimately, we discovered that the issue we had with our parser was due to how
+we had constructed our grammar. To fix this we modified what we had used for a few of the
+statements that makes up our grammar and made the change in our parser as well. This fixed
+all of the issues we had been having up until that point with the parser and allowed us to
+find other areas that had similar issues.
 
 Here is the current output from running the scanner/parser combination on `basicSyntax.bsco`:
 ```
@@ -83,80 +76,397 @@ LexToken(ID,'classBosco',2,47)
 LexToken(COLON,':',2,57)
 LexToken(BONE,'bone',3,61)
 LexToken(ID,'myFunction',3,66)
-LexToken(MINUS,'-',3,76)
-LexToken(COLON,':',3,77)
-LexToken(INT,'int',4,83)
-LexToken(ID,'x',4,87)
-LexToken(ASSIGN,'=',4,89)
-LexToken(INT,'2',4,91)
-LexToken(BAR,'|',4,92)
-LexToken(INT,'int',5,98)
-LexToken(ID,'y',5,102)
-LexToken(ASSIGN,'=',5,104)
-LexToken(INT,'17',5,106)
-LexToken(BAR,'|',5,108)
-LexToken(INT,'int',6,114)
-LexToken(ID,'z',6,118)
-LexToken(ASSIGN,'=',6,120)
-LexToken(ID,'x',6,122)
-LexToken(PLUS,'+',6,124)
-LexToken(ID,'y',6,126)
-LexToken(BAR,'|',6,127)
-LexToken(SPEAK,'speak',7,133)
-LexToken(MINUS,'-',7,138)
-LexToken(ID,'z',7,139)
-LexToken(BAR,'|',7,140)
-LexToken(COLON,':',8,190)
-LexToken(BONE,'bone',9,194)
-LexToken(ID,'myOtherFunction',9,199)
-LexToken(MINUS,'-',9,214)
-LexToken(COLON,':',9,215)
-LexToken(SPEAK,'speak',10,221)
-LexToken(MINUS,'-',10,226)
-LexToken(STRING,'"I am Bosco. I am speaking woof woof."',10,227)
-LexToken(BAR,'|',10,265)
-LexToken(DIG,'dig',11,271)
-LexToken(MINUS,'-',11,274)
-LexToken(ID,'i',11,275)
-LexToken(ASSIGN,'=',11,277)
-LexToken(INT,'0',11,279)
-LexToken(BAR,'|',11,280)
-LexToken(ID,'i',11,282)
-LexToken(LESS,'<',11,284)
-LexToken(INT,'10',11,286)
-LexToken(BAR,'|',11,288)
-LexToken(ID,'i',11,290)
-LexToken(PLUS,'+',11,291)
-LexToken(PLUS,'+',11,292)
-LexToken(COLON,':',11,293)
-LexToken(SPEAK,'speak',12,301)
-LexToken(MINUS,'-',12,306)
-LexToken(ID,'i',12,307)
-LexToken(BAR,'|',12,308)
-LexToken(COLON,':',13,314)
-LexToken(COLON,':',14,318)
-LexToken(ID,'myOtherFunction',15,322)
-LexToken(MINUS,'-',15,337)
-LexToken(BAR,'|',15,338)
-LexToken(COLON,':',16,368)
-Syntax error in input
-Syntax error in input
+LexToken(MINUS,'-',3,77)
+LexToken(MINUS,'-',3,78)
+LexToken(RPAREN,'(',3,80)
+LexToken(INT,'int',4,86)
+LexToken(ID,'x',4,90)
+LexToken(ASSIGN,'=',4,92)
+LexToken(INT,'2',4,94)
+LexToken(BAR,'|',4,95)
+LexToken(INT,'int',5,101)
+LexToken(ID,'y',5,105)
+LexToken(ASSIGN,'=',5,107)
+LexToken(INT,'17',5,109)
+LexToken(BAR,'|',5,111)
+LexToken(INT,'int',6,117)
+LexToken(ID,'z',6,121)
+LexToken(ASSIGN,'=',6,123)
+LexToken(ID,'x',6,125)
+LexToken(PLUS,'+',6,127)
+LexToken(ID,'y',6,129)
+LexToken(BAR,'|',6,130)
+LexToken(SPEAK,'speak',7,136)
+LexToken(MINUS,'-',7,141)
+LexToken(ID,'z',7,142)
+LexToken(BAR,'|',7,143)
+LexToken(LPAREN,')',8,193)
+LexToken(COLON,':',9,195)
+=======Parsing=======
+PLY: PARSE DEBUG START
+
+State  : 0
+Stack  : . LexToken(WOOF,'woof',12,42)
+Action : Shift and goto state 7
+
+State  : 7
+Stack  : WOOF . LexToken(ID,'classBosco',12,47)
+Action : Shift and goto state 18
+
+State  : 18
+Stack  : WOOF ID . LexToken(COLON,':',12,57)
+Action : Shift and goto state 22
+
+State  : 22
+Stack  : WOOF ID COLON . LexToken(BONE,'bone',13,61)
+Action : Shift and goto state 8
+
+State  : 8
+Stack  : WOOF ID COLON BONE . LexToken(ID,'myFunction',13,66)
+Action : Shift and goto state 19
+
+State  : 19
+Stack  : WOOF ID COLON BONE ID . LexToken(MINUS,'-',13,77)
+Action : Shift and goto state 23
+
+State  : 23
+Stack  : WOOF ID COLON BONE ID MINUS . LexToken(MINUS,'-',13,78)
+Action : Reduce rule [Empty -> <empty>] with [] and goto state 32
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 32
+Defaulted state 32: Reduce using 23
+Stack  : WOOF ID COLON BONE ID MINUS Empty . LexToken(MINUS,'-',13,78)
+Action : Reduce rule [Formals -> Empty] with [None] and goto state 30
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 30
+Stack  : WOOF ID COLON BONE ID MINUS Formals . LexToken(MINUS,'-',13,78)
+Action : Shift and goto state 50
+
+State  : 50
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS . LexToken(RPAREN,'(',13,80)
+Action : Shift and goto state 74
+
+State  : 74
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN . LexToken(INT,'int',14,86)
+Action : Shift and goto state 12
+
+State  : 12
+Defaulted state 12: Reduce using 17
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN INT . None
+Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 11
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type . LexToken(ID,'x',14,90)
+Action : Shift and goto state 21
+
+State  : 21
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID . LexToken(ASSIGN,'=',14,92)
+Action : Shift and goto state 24
+
+State  : 24
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN . LexToken(INT,'2',14,94)
+Action : Shift and goto state 42
+
+State  : 42
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN INT . LexToken(BAR,'|',14,95)
+Action : Reduce rule [Constant -> INT] with ['2'] and goto state 41
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 41
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN Constant . LexToken(BAR,'|',14,95)
+Action : Reduce rule [Expr -> Constant] with [None] and goto state 34
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN Expr . LexToken(BAR,'|',14,95)
+Action : Reduce rule [Var -> Type ID ASSIGN Expr] with [None,'x','=',None] and goto state 9
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 9
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Var . LexToken(BAR,'|',14,95)
+Action : Shift and goto state 20
+
+State  : 20
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Var BAR . LexToken(INT,'int',15,101)
+Action : Reduce rule [VarDecl -> Var BAR] with [None,'|'] and goto state 94
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 94
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl . LexToken(INT,'int',15,101)
+Action : Shift and goto state 12
+
+State  : 12
+Defaulted state 12: Reduce using 17
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl INT . None
+Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 11
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type . LexToken(ID,'y',15,105)
+Action : Shift and goto state 21
+
+State  : 21
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID . LexToken(ASSIGN,'=',15,107)
+Action : Shift and goto state 24
+
+State  : 24
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN . LexToken(INT,'17',15,109)
+Action : Shift and goto state 42
+
+State  : 42
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN INT . LexToken(BAR,'|',15,111)
+Action : Reduce rule [Constant -> INT] with ['17'] and goto state 41
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 41
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN Constant . LexToken(BAR,'|',15,111)
+Action : Reduce rule [Expr -> Constant] with [None] and goto state 34
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN Expr . LexToken(BAR,'|',15,111)
+Action : Reduce rule [Var -> Type ID ASSIGN Expr] with [None,'y','=',None] and goto state 9
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 9
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Var . LexToken(BAR,'|',15,111)
+Action : Shift and goto state 20
+
+State  : 20
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Var BAR . LexToken(INT,'int',16,117)
+Action : Reduce rule [VarDecl -> Var BAR] with [None,'|'] and goto state 94
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 94
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl . LexToken(INT,'int',16,117)
+Action : Shift and goto state 12
+
+State  : 12
+Defaulted state 12: Reduce using 17
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl INT . None
+Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 11
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type . LexToken(ID,'z',16,121)
+Action : Shift and goto state 21
+
+State  : 21
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID . LexToken(ASSIGN,'=',16,123)
+Action : Shift and goto state 24
+
+State  : 24
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN . LexToken(ID,'x',16,125)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN ID . LexToken(PLUS,'+',16,127)
+Action : Reduce rule [LValue -> ID] with ['x'] and goto state 37
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN LValue . LexToken(PLUS,'+',16,127)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 34
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr . LexToken(PLUS,'+',16,127)
+Action : Shift and goto state 54
+
+State  : 54
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr PLUS . LexToken(ID,'y',16,129)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr PLUS ID . LexToken(BAR,'|',16,130)
+Action : Reduce rule [LValue -> ID] with ['y'] and goto state 37
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr PLUS LValue . LexToken(BAR,'|',16,130)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 76
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 76
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr PLUS Expr . LexToken(BAR,'|',16,130)
+Action : Reduce rule [Expr -> Expr PLUS Expr] with [None,'+',None] and goto state 34
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr . LexToken(BAR,'|',16,130)
+Action : Reduce rule [Var -> Type ID ASSIGN Expr] with [None,'z','=',None] and goto state 9
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 9
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Var . LexToken(BAR,'|',16,130)
+Action : Shift and goto state 20
+
+State  : 20
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Var BAR . LexToken(SPEAK,'speak',17,136)
+Action : Reduce rule [VarDecl -> Var BAR] with [None,'|'] and goto state 94
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 94
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl . LexToken(SPEAK,'speak',17,136)
+Action : Reduce rule [Empty -> <empty>] with [] and goto state 95
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 95
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Empty . LexToken(SPEAK,'speak',17,136)
+Action : Reduce rule [R_VarDecl -> Empty] with [None] and goto state 115
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 115
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl R_VarDecl . LexToken(SPEAK,'speak',17,136)
+Action : Reduce rule [R_VarDecl -> VarDecl R_VarDecl] with [None,None] and goto state 115
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 115
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl R_VarDecl . LexToken(SPEAK,'speak',17,136)
+Action : Reduce rule [R_VarDecl -> VarDecl R_VarDecl] with [None,None] and goto state 115
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 115
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl R_VarDecl . LexToken(SPEAK,'speak',17,136)
+Action : Reduce rule [R_VarDecl -> VarDecl R_VarDecl] with [None,None] and goto state 93
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 93
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl . LexToken(SPEAK,'speak',17,136)
+Action : Shift and goto state 114
+
+State  : 114
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK . LexToken(MINUS,'-',17,141)
+Action : Shift and goto state 131
+
+State  : 131
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS . LexToken(ID,'z',17,142)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS ID . LexToken(BAR,'|',17,143)
+Action : Reduce rule [LValue -> ID] with ['z'] and goto state 37
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS LValue . LexToken(BAR,'|',17,143)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 108
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 108
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS Expr . LexToken(BAR,'|',17,143)
+Action : Reduce rule [Empty -> <empty>] with [] and goto state 125
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 125
+Defaulted state 125: Reduce using 68
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS Expr Empty . LexToken(BAR,'|',17,143)
+Action : Reduce rule [R_Expr -> Empty] with [None] and goto state 123
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 123
+Defaulted state 123: Reduce using 66
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS Expr R_Expr . LexToken(BAR,'|',17,143)
+Action : Reduce rule [R_Expr -> Expr R_Expr] with [None,None] and goto state 137
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 137
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS R_Expr . LexToken(BAR,'|',17,143)
+Action : Shift and goto state 141
+
+State  : 141
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS R_Expr BAR . LexToken(LPAREN,')',18,193)
+Action : Reduce rule [PrintStmt -> SPEAK MINUS R_Expr BAR] with ['speak','-',None,'|'] and goto state 106
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 106
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl PrintStmt . LexToken(LPAREN,')',18,193)
+Action : Reduce rule [Stmt -> PrintStmt] with [None] and goto state 99
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 99
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl Stmt . LexToken(LPAREN,')',18,193)
+Action : Reduce rule [Empty -> <empty>] with [] and goto state 100
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 100
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl Stmt Empty . LexToken(LPAREN,')',18,193)
+Action : Reduce rule [R_Stmt -> Empty] with [None] and goto state 121
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 121
+Defaulted state 121: Reduce using 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl Stmt R_Stmt . LexToken(LPAREN,')',18,193)
+Action : Reduce rule [R_Stmt -> Stmt R_Stmt] with [None,None] and goto state 98
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 98
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl R_Stmt . LexToken(LPAREN,')',18,193)
+Action : Shift and goto state 120
+
+State  : 120
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl R_Stmt LPAREN . LexToken(COLON,':',19,195)
+Action : Reduce rule [StmtBlock -> RPAREN R_VarDecl R_Stmt LPAREN] with ['(',None,None,')'] and goto state 73
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 73
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS StmtBlock . LexToken(COLON,':',19,195)
+Action : Reduce rule [FuncDecl -> BONE ID MINUS Formals MINUS StmtBlock] with ['bone','myFunction','-',None,'-',None] and goto state 27
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 27
+Stack  : WOOF ID COLON FuncDecl . LexToken(COLON,':',19,195)
+Action : Reduce rule [Field -> FuncDecl] with [None] and goto state 25
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 25
+Stack  : WOOF ID COLON Field . LexToken(COLON,':',19,195)
+Action : Shift and goto state 47
+
+State  : 47
+Stack  : WOOF ID COLON Field COLON . $end
+Action : Reduce rule [ClassDecl -> WOOF ID COLON Field COLON] with ['woof','classBosco',':',None,':'] and goto state 3
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 3
+Stack  : ClassDecl . $end
+Action : Reduce rule [Decl -> ClassDecl] with [None] and goto state 2
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 2
+Stack  : Decl . $end
+Action : Reduce rule [Program -> Decl] with [None] and goto state 1
+Result : <NoneType @ 0x556341168dc0> (None)
+
+State  : 1
+Stack  : Program . $end
+Done   : Returning <NoneType @ 0x556341168dc0> (None)
+PLY: PARSE DEBUG END
+===Finished Parsing===
 ```
-As shown above, the scanner properly recognizes the input tokens existing in the program given as an argument. It recognizes unspecified elements and has support for comments. However, the bottom two lines of the program are where the issues with our parser begin. When completing debugging tasks these issues become more detailed and specific, but despite this it was hard to figure out exactly what was causing the parser to fail. Even with every group member looking through the source code multiple times and using a variety of testing methods, we were unable to find the bug. This resulted in the production of only a partially working scanner and parser combination program, with the scanner being seemingly functional and the parser encountering issues that were detrimental to its functionality.
+As shown above, the scanner properly recognizes the input tokens existing in the program given
+as an argument. It recognizes unspecified elements and has support for comments. These tokens
+are then utilized by the parser to convert the terminals into larger components of the program.
+The python package we used, PLY, aka Python Lex-Yacc, utilizes LR parsing otherwise known as
+Shift-Reduce parsing. This type of parsing takes the lower level components and builds
+up to the higher level components, ie, a letter, assignment, and a number constant are
+made into a variable, which is then a part of a variable declaration. LR parsing specifically
+checks if the next token to the right is a valid addition to the stack which can then be reduced
+using the grammar rules that have been specified in the parser.
 
 To test our scanner and parser we created a few sample programs that showed off the main parts of Bosco's grammar and syntax. Here is a snippet of one of the sample programs:
 ```
-bone myOtherFunction-:
-  speak-"I am Bosco. I am speaking woof woof."|
-  dig-i = 0| i < 10| i++:
-    speak-i|
-  :
-:
-myOtherFunction-| ?? I am calling my function
+dig i = 0| i < y| i = i + 1 (
+  speak-"An Iteration!"|
+  speak-i|
+)
 ```
-The above snippet contains a function, a `speak` statement to print to the terminal, and a `dig` loop which functions in a similar fashion to a Java for loop. Additionally, there is an example of the function being called.
+The above snippet contains a function, a `speak` statement to print to the terminal, and a `dig` loop which functions in a similar fashion to a Java for loop.
 
 ## Conclusion
 <!-- Conclusion. Give a short overview of your project and its results. Describe what you learned, what were the biggest challenges and the biggest rewards. -->
 
-For our project we set out to create a simple yet fun programming language called Bosco. We were able to successfully create a grammar that included dog-related elements (in honor of Bosco) and with this grammar we were able to construct sample programs to show how a regular Bosco program would look. Creating the grammar was slightly challenging as we had to be creative and think of how dog-esque elements could be included in a way that made sense. After this, we took steps to create a scanner and parser combination program that would serve as a lexer and parser for the project's grammar. Unfortunately, while our scanner functioned as intended, scanning in keywords and tokens with no issue, our parser did not. This was undoubtedly the most challenging portion of the lab because we ran into an number of errors that we could not fix when writing the parser code. Despite each group member spending hours to try and fix these issues, we simply could not figure out what was causing the parser to fail. Despite these failure-inducing challenges, this project provided a variety of rewarding moments to our group. For instance, it was very enjoyable to pursue the novel idea of creating a programming language from scratch and being able to write programs in our language after constructing our grammar. Additionally, it was also very rewarding when we were able to get our scanner to work with our grammar. While our Bosco programming language's parser did not end up working, creating a grammar and scanner were rewarding moments and good learning experience for our group during the completion of this project.
+For our project we set out to create a simple yet fun programming language called Bosco. We were able to successfully create a grammar that included dog-related elements (in honor of Bosco) and with this grammar we were able to construct sample programs to show how a regular Bosco program would look. Creating the grammar was slightly challenging as we had to be creative and think of how dog-esque elements could be included in a way that made sense. After this, we took steps to create a scanner and parser combination program that would serve as a lexer and parser for the project's grammar. Unfortunately, while our scanner functioned as intended right away, scanning in keywords and tokens with no issue, our parser did not and took a lot of trial and error to get it functional. This was undoubtedly the most challenging portion of the lab because we ran into an number of errors that we could not fix when writing the parser code and instead required us to change our grammar. Despite these challenges, this project provided a variety of rewarding moments to our group. For instance, it was very enjoyable to pursue the novel idea of creating a programming language from scratch and being able to write programs in our language after constructing our grammar. Additionally, it was also very rewarding when we were able to get our scanner to work with our grammar and when we finally got our parser working correctly. Ultimately, creating a grammar and scanner were rewarding moments and good learning experience for our group during the completion of this project.

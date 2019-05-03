@@ -106,7 +106,7 @@ def p_ClassDecl(p):
     '''ClassDecl : WOOF ID COLON Field COLON'''
 
 def p_FuncDecl(p):
-    '''FuncDecl : BONE ID MINUS Formals StmtBlock'''
+    '''FuncDecl : BONE ID MINUS Formals MINUS StmtBlock'''
 
 def p_VarDecl(p):
     '''VarDecl : Var BAR'''
@@ -144,7 +144,7 @@ def p_R_Field(p):
                | Empty'''
 
 def p_StmtBlock(p):
-    '''StmtBlock : COLON R_VarDecl R_Stmt COLON'''
+    '''StmtBlock : RPAREN R_VarDecl R_Stmt LPAREN'''
 
 def p_Stmt(p):
     '''Stmt : R_Expr BAR
@@ -164,7 +164,7 @@ def p_IfStmt(p):
               | IF MINUS Expr Stmt ELSE Stmt'''
 
 def p_LoopStmt(p):
-    'LoopStmt : DIG MINUS R_Expr BAR Expr BAR R_Expr COLON Stmt'
+    'LoopStmt : DIG Expr BAR Expr BAR Expr StmtBlock'
 
 def p_ReturnStmt(p):
     '''ReturnStmt : RETURN R_Expr BAR'''

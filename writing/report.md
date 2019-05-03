@@ -54,7 +54,9 @@ IfStmt ::= if ( Expr ) Stmt 〈else Stmt〉
 ReturnStmt ::= return〈Expr〉\|
 BreakStmt ::= break\|
 DigStmt ::= dig Expr| Expr | Expr StmtBlock
-Expr ::= LValue = Expr | Constant | LValue | ( Expr ) | Expr+Expr | Expr-Expr | Expr*Expr | Expr/Expr | Expr%Expr | - Expr | Expr < Expr | Expr <= Expr | Expr > Expr | Expr >= Expr | Expr == Expr | Expr != Expr | Expr && Expr | Expr || Expr | ! Expr | FetchInteger ( ) | FetchLine ( )
+Expr ::= LValue = Expr | Constant | LValue | ( Expr ) | Expr+Expr | Expr-Expr | Expr*Expr | Expr/Expr |
+ Expr%Expr | - Expr | Expr < Expr | Expr <= Expr | Expr > Expr | Expr >= Expr | Expr == Expr |
+ Expr != Expr | Expr && Expr | Expr || Expr | ! Expr | FetchInteger ( ) | FetchLine ( )
 LValue ::= indent (Actuals) | Expr . indent (Actuals)
 Actuals ::= Expr+, | ε
 Type ::= int | double | bool | string

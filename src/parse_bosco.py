@@ -8,8 +8,8 @@ reserved = {
 
 # tokens that will be used for operations and organization of code
 tokens = [
-    'ID','PLUS', 'MINUS','DIV','MULT', 'REM', 'AND','OR',
-    'ASSIGN', 'GREATER','LESS', 'GREATEREQ','LESSEQ','EQUALS', 'NEQUALS',
+    'ID','PLUS', 'MINUS', 'DIV', 'MULT', 'REM', 'AND', 'OR',
+    'ASSIGN', 'GREATER', 'LESS', 'GREATEREQ', 'LESSEQ', 'EQUALS', 'NEQUALS',
     'NOT', 'COLON', 'COMMA', 'BAR', 'LPAREN', 'RPAREN'
 ]
 
@@ -89,77 +89,91 @@ precedence = (
      ('left', 'MULT', 'DIV'),
  )
 
-def p_Program(t):
-    '''Program : Decl'''
+def p_Program(p):
+    'Program : Decl'
 
-def p_Decl(t):
-    '''Decl : WoofDecl
-            | BoneDecl
+def p_Decl(p):
+    '''Decl : ClassDecl
+            | FuncDecl
             | VarDecl
             | R_Decl'''
 
-def p_R_Decl(t):
+def p_R_Decl(p):
     '''R_Decl : Decl R_Decl
               | Empty'''
 
-def p_WoofDecl(t):
-    '''WoofDecl : WOOF ID COLON Field COLON'''
+def p_ClassDecl(p):
+    '''ClassDecl : WOOF ID COLON Field COLON'''
 
-def p_BoneDecl(t):
-    '''BoneDecl : BONE ID MINUS Field StmtBlock'''
+def p_FuncDecl(p):
+    '''FuncDecl : BONE ID MINUS Formals StmtBlock'''
 
-def p_Var(t):
-    '''Var : Type ID'''
+def p_VarDecl(p):
+    '''VarDecl : Var BAR'''
 
-def p_VarDecl(t):
-    '''VarDecl : Var BAR
-               | R_VarDecl'''
-
-def p_R_VarDecl(t):
+def p_R_VarDecl(p):
     '''R_VarDecl : VarDecl R_VarDecl
                  | Empty'''
 
-def p_StmtBlock(t):
-    '''StmtBlock : COLON R_VarDecl R_Stmt COLON'''
-    # t[0] = t[1]
+def p_Var(p):
+    '''Var : Type ID
+           | Type ID ASSIGN Expr'''
 
-def p_Stmt(t):
+def p_R_Var(p):
+    '''R_Var : COMMA Var R_Var
+             | Empty'''
+
+def p_Type(p):
+    '''Type : INT
+            | DOUBLE
+            | BOOL
+            | STRING'''
+
+def p_Formals(p):
+    '''Formals : Var
+               | Var R_Var
+               | Empty'''
+
+def p_Field(p):
+    '''Field : VarDecl
+             | FuncDecl
+             | R_Field'''
+
+def p_R_Field(p):
+    '''R_Field : Field R_Field
+               | Empty'''
+
+def p_StmtBlock(p):
+    '''StmtBlock : COLON R_VarDecl R_Stmt COLON'''
+
+def p_Stmt(p):
     '''Stmt : R_Expr BAR
             | IfStmt
-            | DigStmt
+            | LoopStmt
             | BreakStmt
             | ReturnStmt
-            | SpeakStmt
+            | PrintStmt
             | StmtBlock'''
 
 def p_R_Stmt(p):
     '''R_Stmt : Stmt R_Stmt
               | Empty'''
 
-def p_Field(t):
-    '''Field : BoneDecl
-             | VarDecl
-             | R_Field'''
-
-def p_R_Field(t):
-    '''R_Field : Field R_Field
-               | Empty'''
-
-def p_SpeakStmt(p):
-    '''SpeakStmt : SPEAK RPAREN R_Expr LPAREN BAR'''
-
 def p_IfStmt(p):
-    '''IfStmt : IF MINUS Expr COLON Stmt
-              | IF MINUS Expr COLON Stmt ELSE COLON Stmt'''
+    '''IfStmt : IF MINUS Expr StmtBlock
+              | IF MINUS Expr Stmt ELSE Stmt'''
+
+def p_LoopStmt(p):
+    'LoopStmt : DIG MINUS R_Expr BAR Expr BAR R_Expr COLON Stmt'
 
 def p_ReturnStmt(p):
     '''ReturnStmt : RETURN R_Expr BAR'''
 
 def p_BreakStmt(p):
-    '''BreakStmt : BREAK BAR'''
+    'BreakStmt : BREAK BAR'
 
-def p_DigStmt(p):
-    '''DigStmt : DIG MINUS Type ID Expr BAR Expr BAR Expr COLON Stmt'''
+def p_PrintStmt(p):
+    '''PrintStmt : SPEAK MINUS R_Expr BAR'''
 
 def p_Expr_Math(p):
     '''Expr : Expr PLUS Expr
@@ -183,37 +197,32 @@ def p_Expr_Logic(p):
 def p_Expr(p):
     '''Expr : LValue ASSIGN Expr
             | RPAREN Expr LPAREN
-            | FETCHINT MINUS BAR
-            | FETCHLINE MINUS BAR
-            | Constant'''
+            | FETCHINT RPAREN LPAREN
+            | FETCHLINE RPAREN LPAREN
+            | Constant
+            | LValue'''
 
-def p_R_Expr(t):
+
+def p_R_Expr(p):
     '''R_Expr : Expr R_Expr
               | COMMA Expr R_Expr
               | Empty'''
 
-def p_LValue(t):
+def p_LValue(p):
     '''LValue : ID'''
 
-def p_Constant(t):
+def p_Constant(p):
     '''Constant : INT
                 | DOUBLE
                 | BOOL
                 | STRING
                 | NULL'''
 
-def p_Type(t):
-    '''Type : INT
-            | DOUBLE
-            | BOOL
-            | STRING
-            | ID'''
-
-def p_Empty(t):
-    '''Empty :'''
+def p_Empty(p):
+    'Empty :'
     pass
 
-def p_error(t):
+def p_error(p):
     print("Syntax error in input")
 
 # checks if there is a file path supplied as an argument, if not asks for one on run
@@ -243,5 +252,12 @@ while True:
      break
  print(tok)
 
+try:
+    debug=int(sys.argv[2])
+except:
+    debug=0
+print("=======Parsing=======")
 parser = yacc.yacc()
-parser.parse(data)
+
+parser.parse(data,debug=debug)
+print("===Finished Parsing===")

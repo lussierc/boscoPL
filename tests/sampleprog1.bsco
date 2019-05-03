@@ -1,10 +1,11 @@
 ?? Bosco Language - First Sample Program.
+
 woof classBosco:
   bone myFunction-:
-    ??int x = 2|
-    ??int y = 17|
-    ??int z = x + y|
-    ??bool w = true|
+    speak-z|
+    int x = 2|
+    int y = 17|
+    int z = x + y|
     ??speak-z|  ?? This is my comment. Here we are printing.
   :
   ??bone myOtherFunction-:

@@ -2,6 +2,7 @@
 ## Zachary Andrews, Devin Spitalny, Christian Lussier
 
 Grammar:
+
 ```
 Program ::== Decl+
 Decl ::= BoneDecl | WoofDecl | VarDecl
@@ -18,7 +19,10 @@ IfStmt ::= if ( Expr ) Stmt 〈else Stmt〉
 ReturnStmt ::= return〈Expr〉\|
 BreakStmt ::= break\|
 DigStmt ::= dig- Type ID Expr|Expr|Expr: Stmt
-Expr ::= LValue = Expr | Constant | LValue | this | ( Expr ) | Expr+Expr | Expr-Expr | Expr*Expr | Expr/Expr | Expr%Expr | - Expr | Expr < Expr | Expr <= Expr | Expr > Expr | Expr >= Expr | Expr == Expr | Expr != Expr | Expr && Expr | Expr || Expr | ! Expr | FetchInteger ( ) | FetchLine ( )
+Expr ::= LValue = Expr | Constant | LValue | this | ( Expr ) | Expr+Expr | Expr-Expr |
+  Expr*Expr | Expr/Expr | Expr%Expr | - Expr | Expr < Expr | Expr <= Expr | Expr > Expr |
+  Expr >= Expr | Expr == Expr | Expr != Expr | Expr && Expr | Expr || Expr | ! Expr |
+FetchInteger ( ) | FetchLine ( )
 LValue ::= indent (Actuals) | Expr . indent (Actuals)
 Actuals ::= Expr+, | ε
 Type ::= int | double | bool | string

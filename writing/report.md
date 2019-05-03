@@ -461,9 +461,11 @@ using the grammar rules that have been specified in the parser.
 
 To test our scanner and parser we created a few sample programs that showed off the main parts of Bosco's grammar and syntax. Here is a snippet of one of the sample programs:
 ```
-dig i = 0| i < y| i = i + 1 (
-  speak-"An Iteration!"|
-  speak-i|
+bone useLoop -int z- (
+  dig i = z| i < y| i = i + 1 (
+    speak-"An Iteration!"|
+    speak-i|
+  )
 )
 ```
 The above snippet contains a function, a `speak` statement to print to the terminal, and a `dig` loop which functions in a similar fashion to a Java for loop.

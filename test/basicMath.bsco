@@ -1,0 +1,26 @@
+?? Bosco Language - Sample Program 2
+?? Contains simple math operations
+
+bone doMath-a,b,c:
+  ?? Perform addition:
+  int x = a + b|
+  int y = x + c|
+
+  ?? Perform subtraction:
+  int z = y - a|
+
+  ?? Perform multiplication:
+  int mult = z * x|
+
+  ?? Print the last result to terminal:
+  speak-mult|
+: ?? End of bone
+
+
+int a = 5|
+int b = 10|
+int c = 15|
+
+doMath-a,b,c|
+
+?? End of program

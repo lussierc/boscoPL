@@ -222,3 +222,4 @@ tags.tmp
 *.xmi
 *.sync
 *.jekyll-metadata
+.DS_Store

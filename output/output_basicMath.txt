@@ -1,66 +1,597 @@
-LexToken(BONE,'bone',4,73)
-LexToken(ID,'doMath',4,78)
-LexToken(MINUS,'-',4,84)
-LexToken(ID,'a',4,85)
-LexToken(COMMA,',',4,86)
-LexToken(ID,'b',4,87)
-LexToken(COMMA,',',4,88)
-LexToken(ID,'c',4,89)
-LexToken(COLON,':',4,90)
-LexToken(INT,'int',6,117)
-LexToken(ID,'x',6,121)
-LexToken(ASSIGN,'=',6,123)
-LexToken(ID,'a',6,125)
-LexToken(PLUS,'+',6,127)
-LexToken(ID,'b',6,129)
-LexToken(BAR,'|',6,130)
-LexToken(INT,'int',7,134)
-LexToken(ID,'y',7,138)
-LexToken(ASSIGN,'=',7,140)
-LexToken(ID,'x',7,142)
-LexToken(PLUS,'+',7,144)
-LexToken(ID,'c',7,146)
-LexToken(BAR,'|',7,147)
-LexToken(INT,'int',10,178)
-LexToken(ID,'z',10,182)
-LexToken(ASSIGN,'=',10,184)
-LexToken(ID,'y',10,186)
-LexToken(MINUS,'-',10,188)
-LexToken(ID,'a',10,190)
-LexToken(BAR,'|',10,191)
-LexToken(INT,'int',13,225)
-LexToken(ID,'mult',13,229)
-LexToken(ASSIGN,'=',13,234)
-LexToken(ID,'z',13,236)
-LexToken(MULT,'*',13,238)
-LexToken(ID,'x',13,240)
-LexToken(BAR,'|',13,241)
-LexToken(SPEAK,'speak',16,286)
-LexToken(MINUS,'-',16,291)
-LexToken(ID,'mult',16,292)
-LexToken(BAR,'|',16,296)
-LexToken(COLON,':',17,298)
-LexToken(INT,'int',20,317)
-LexToken(ID,'a',20,321)
-LexToken(ASSIGN,'=',20,323)
-LexToken(INT,'5',20,325)
-LexToken(BAR,'|',20,326)
-LexToken(INT,'int',21,328)
-LexToken(ID,'b',21,332)
-LexToken(ASSIGN,'=',21,334)
-LexToken(INT,'10',21,336)
-LexToken(BAR,'|',21,338)
-LexToken(INT,'int',22,340)
-LexToken(ID,'c',22,344)
-LexToken(ASSIGN,'=',22,346)
-LexToken(INT,'15',22,348)
-LexToken(BAR,'|',22,350)
-LexToken(ID,'doMath',24,353)
-LexToken(MINUS,'-',24,359)
-LexToken(ID,'a',24,360)
-LexToken(COMMA,',',24,361)
-LexToken(ID,'b',24,362)
-LexToken(COMMA,',',24,363)
-LexToken(ID,'c',24,364)
-LexToken(BAR,'|',24,365)
-Syntax error in input
+LexToken(WOOF,'woof',3,72)
+LexToken(ID,'basicMath',3,77)
+LexToken(COLON,':',3,86)
+LexToken(BONE,'bone',4,90)
+LexToken(ID,'doMath',4,95)
+LexToken(MINUS,'-',4,102)
+LexToken(INT,'int',4,103)
+LexToken(ID,'a',4,107)
+LexToken(COMMA,',',4,108)
+LexToken(DOUBLE,'double',4,110)
+LexToken(ID,'b',4,117)
+LexToken(COMMA,',',4,118)
+LexToken(BOOL,'bool',4,120)
+LexToken(ID,'c',4,125)
+LexToken(MINUS,'-',4,126)
+LexToken(RPAREN,'(',4,128)
+LexToken(INT,'int',6,159)
+LexToken(ID,'x',6,163)
+LexToken(ASSIGN,'=',6,165)
+LexToken(ID,'a',6,167)
+LexToken(PLUS,'+',6,169)
+LexToken(ID,'b',6,171)
+LexToken(BAR,'|',6,172)
+LexToken(INT,'int',7,178)
+LexToken(ID,'y',7,182)
+LexToken(ASSIGN,'=',7,184)
+LexToken(ID,'x',7,186)
+LexToken(PLUS,'+',7,188)
+LexToken(ID,'c',7,190)
+LexToken(BAR,'|',7,191)
+LexToken(INT,'int',10,226)
+LexToken(ID,'z',10,230)
+LexToken(ASSIGN,'=',10,232)
+LexToken(ID,'y',10,234)
+LexToken(MINUS,'-',10,236)
+LexToken(ID,'a',10,238)
+LexToken(BAR,'|',10,239)
+LexToken(INT,'int',13,277)
+LexToken(ID,'mult',13,281)
+LexToken(ASSIGN,'=',13,286)
+LexToken(ID,'z',13,288)
+LexToken(MULT,'*',13,290)
+LexToken(ID,'x',13,292)
+LexToken(BAR,'|',13,293)
+LexToken(SPEAK,'speak',16,342)
+LexToken(MINUS,'-',16,347)
+LexToken(ID,'mult',16,348)
+LexToken(BAR,'|',16,352)
+LexToken(LPAREN,')',17,356)
+LexToken(COLON,':',18,373)
+=======Parsing=======
+PLY: PARSE DEBUG START
+
+State  : 0
+Stack  : . LexToken(WOOF,'woof',22,72)
+Action : Shift and goto state 7
+
+State  : 7
+Stack  : WOOF . LexToken(ID,'basicMath',22,77)
+Action : Shift and goto state 18
+
+State  : 18
+Stack  : WOOF ID . LexToken(COLON,':',22,86)
+Action : Shift and goto state 22
+
+State  : 22
+Stack  : WOOF ID COLON . LexToken(BONE,'bone',23,90)
+Action : Shift and goto state 8
+
+State  : 8
+Stack  : WOOF ID COLON BONE . LexToken(ID,'doMath',23,95)
+Action : Shift and goto state 19
+
+State  : 19
+Stack  : WOOF ID COLON BONE ID . LexToken(MINUS,'-',23,102)
+Action : Shift and goto state 23
+
+State  : 23
+Stack  : WOOF ID COLON BONE ID MINUS . LexToken(INT,'int',23,103)
+Action : Shift and goto state 12
+
+State  : 12
+Defaulted state 12: Reduce using 17
+Stack  : WOOF ID COLON BONE ID MINUS INT . None
+Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 11
+Stack  : WOOF ID COLON BONE ID MINUS Type . LexToken(ID,'a',23,107)
+Action : Shift and goto state 21
+
+State  : 21
+Stack  : WOOF ID COLON BONE ID MINUS Type ID . LexToken(COMMA,',',23,108)
+Action : Reduce rule [Var -> Type ID] with [None,'a'] and goto state 31
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 31
+Stack  : WOOF ID COLON BONE ID MINUS Var . LexToken(COMMA,',',23,108)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA . LexToken(DOUBLE,'double',23,110)
+Action : Shift and goto state 13
+
+State  : 13
+Defaulted state 13: Reduce using 18
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA DOUBLE . None
+Action : Reduce rule [Type -> DOUBLE] with ['double'] and goto state 11
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 11
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Type . LexToken(ID,'b',23,117)
+Action : Shift and goto state 21
+
+State  : 21
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Type ID . LexToken(COMMA,',',23,118)
+Action : Reduce rule [Var -> Type ID] with [None,'b'] and goto state 75
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 75
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Var . LexToken(COMMA,',',23,118)
+Action : Shift and goto state 52
+
+State  : 52
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Var COMMA . LexToken(BOOL,'bool',23,120)
+Action : Shift and goto state 14
+
+State  : 14
+Defaulted state 14: Reduce using 19
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Var COMMA BOOL . None
+Action : Reduce rule [Type -> BOOL] with ['bool'] and goto state 11
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 11
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Var COMMA Type . LexToken(ID,'c',23,125)
+Action : Shift and goto state 21
+
+State  : 21
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Var COMMA Type ID . LexToken(MINUS,'-',23,126)
+Action : Reduce rule [Var -> Type ID] with [None,'c'] and goto state 75
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 75
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Var COMMA Var . LexToken(MINUS,'-',23,126)
+Action : Reduce rule [Empty -> <empty>] with [] and goto state 53
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 53
+Defaulted state 53: Reduce using 16
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Var COMMA Var Empty . LexToken(MINUS,'-',23,126)
+Action : Reduce rule [R_Var -> Empty] with [None] and goto state 96
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 96
+Defaulted state 96: Reduce using 15
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Var COMMA Var R_Var . LexToken(MINUS,'-',23,126)
+Action : Reduce rule [R_Var -> COMMA Var R_Var] with [',',None,None] and goto state 96
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 96
+Defaulted state 96: Reduce using 15
+Stack  : WOOF ID COLON BONE ID MINUS Var COMMA Var R_Var . LexToken(MINUS,'-',23,126)
+Action : Reduce rule [R_Var -> COMMA Var R_Var] with [',',None,None] and goto state 51
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 51
+Defaulted state 51: Reduce using 22
+Stack  : WOOF ID COLON BONE ID MINUS Var R_Var . LexToken(MINUS,'-',23,126)
+Action : Reduce rule [Formals -> Var R_Var] with [None,None] and goto state 30
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 30
+Stack  : WOOF ID COLON BONE ID MINUS Formals . LexToken(MINUS,'-',23,126)
+Action : Shift and goto state 50
+
+State  : 50
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS . LexToken(RPAREN,'(',23,128)
+Action : Shift and goto state 74
+
+State  : 74
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN . LexToken(INT,'int',25,159)
+Action : Shift and goto state 12
+
+State  : 12
+Defaulted state 12: Reduce using 17
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN INT . None
+Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 11
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type . LexToken(ID,'x',25,163)
+Action : Shift and goto state 21
+
+State  : 21
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID . LexToken(ASSIGN,'=',25,165)
+Action : Shift and goto state 24
+
+State  : 24
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN . LexToken(ID,'a',25,167)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN ID . LexToken(PLUS,'+',25,169)
+Action : Reduce rule [LValue -> ID] with ['a'] and goto state 37
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN LValue . LexToken(PLUS,'+',25,169)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 34
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN Expr . LexToken(PLUS,'+',25,169)
+Action : Shift and goto state 54
+
+State  : 54
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN Expr PLUS . LexToken(ID,'b',25,171)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN Expr PLUS ID . LexToken(BAR,'|',25,172)
+Action : Reduce rule [LValue -> ID] with ['b'] and goto state 37
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN Expr PLUS LValue . LexToken(BAR,'|',25,172)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 76
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 76
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN Expr PLUS Expr . LexToken(BAR,'|',25,172)
+Action : Reduce rule [Expr -> Expr PLUS Expr] with [None,'+',None] and goto state 34
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN Expr . LexToken(BAR,'|',25,172)
+Action : Reduce rule [Var -> Type ID ASSIGN Expr] with [None,'x','=',None] and goto state 9
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 9
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Var . LexToken(BAR,'|',25,172)
+Action : Shift and goto state 20
+
+State  : 20
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Var BAR . LexToken(INT,'int',26,178)
+Action : Reduce rule [VarDecl -> Var BAR] with [None,'|'] and goto state 94
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 94
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl . LexToken(INT,'int',26,178)
+Action : Shift and goto state 12
+
+State  : 12
+Defaulted state 12: Reduce using 17
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl INT . None
+Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 11
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type . LexToken(ID,'y',26,182)
+Action : Shift and goto state 21
+
+State  : 21
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID . LexToken(ASSIGN,'=',26,184)
+Action : Shift and goto state 24
+
+State  : 24
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN . LexToken(ID,'x',26,186)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN ID . LexToken(PLUS,'+',26,188)
+Action : Reduce rule [LValue -> ID] with ['x'] and goto state 37
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN LValue . LexToken(PLUS,'+',26,188)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 34
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN Expr . LexToken(PLUS,'+',26,188)
+Action : Shift and goto state 54
+
+State  : 54
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN Expr PLUS . LexToken(ID,'c',26,190)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN Expr PLUS ID . LexToken(BAR,'|',26,191)
+Action : Reduce rule [LValue -> ID] with ['c'] and goto state 37
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN Expr PLUS LValue . LexToken(BAR,'|',26,191)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 76
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 76
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN Expr PLUS Expr . LexToken(BAR,'|',26,191)
+Action : Reduce rule [Expr -> Expr PLUS Expr] with [None,'+',None] and goto state 34
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN Expr . LexToken(BAR,'|',26,191)
+Action : Reduce rule [Var -> Type ID ASSIGN Expr] with [None,'y','=',None] and goto state 9
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 9
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Var . LexToken(BAR,'|',26,191)
+Action : Shift and goto state 20
+
+State  : 20
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Var BAR . LexToken(INT,'int',29,226)
+Action : Reduce rule [VarDecl -> Var BAR] with [None,'|'] and goto state 94
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 94
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl . LexToken(INT,'int',29,226)
+Action : Shift and goto state 12
+
+State  : 12
+Defaulted state 12: Reduce using 17
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl INT . None
+Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 11
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type . LexToken(ID,'z',29,230)
+Action : Shift and goto state 21
+
+State  : 21
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID . LexToken(ASSIGN,'=',29,232)
+Action : Shift and goto state 24
+
+State  : 24
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN . LexToken(ID,'y',29,234)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN ID . LexToken(MINUS,'-',29,236)
+Action : Reduce rule [LValue -> ID] with ['y'] and goto state 37
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN LValue . LexToken(MINUS,'-',29,236)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 34
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr . LexToken(MINUS,'-',29,236)
+Action : Shift and goto state 55
+
+State  : 55
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr MINUS . LexToken(ID,'a',29,238)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr MINUS ID . LexToken(BAR,'|',29,239)
+Action : Reduce rule [LValue -> ID] with ['a'] and goto state 37
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr MINUS LValue . LexToken(BAR,'|',29,239)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 77
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 77
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr MINUS Expr . LexToken(BAR,'|',29,239)
+Action : Reduce rule [Expr -> Expr MINUS Expr] with [None,'-',None] and goto state 34
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr . LexToken(BAR,'|',29,239)
+Action : Reduce rule [Var -> Type ID ASSIGN Expr] with [None,'z','=',None] and goto state 9
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 9
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Var . LexToken(BAR,'|',29,239)
+Action : Shift and goto state 20
+
+State  : 20
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Var BAR . LexToken(INT,'int',32,277)
+Action : Reduce rule [VarDecl -> Var BAR] with [None,'|'] and goto state 94
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 94
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl . LexToken(INT,'int',32,277)
+Action : Shift and goto state 12
+
+State  : 12
+Defaulted state 12: Reduce using 17
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl INT . None
+Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 11
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type . LexToken(ID,'mult',32,281)
+Action : Shift and goto state 21
+
+State  : 21
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type ID . LexToken(ASSIGN,'=',32,286)
+Action : Shift and goto state 24
+
+State  : 24
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type ID ASSIGN . LexToken(ID,'z',32,288)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type ID ASSIGN ID . LexToken(MULT,'*',32,290)
+Action : Reduce rule [LValue -> ID] with ['z'] and goto state 37
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type ID ASSIGN LValue . LexToken(MULT,'*',32,290)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 34
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type ID ASSIGN Expr . LexToken(MULT,'*',32,290)
+Action : Shift and goto state 56
+
+State  : 56
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type ID ASSIGN Expr MULT . LexToken(ID,'x',32,292)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type ID ASSIGN Expr MULT ID . LexToken(BAR,'|',32,293)
+Action : Reduce rule [LValue -> ID] with ['x'] and goto state 37
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type ID ASSIGN Expr MULT LValue . LexToken(BAR,'|',32,293)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 78
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 78
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type ID ASSIGN Expr MULT Expr . LexToken(BAR,'|',32,293)
+Action : Reduce rule [Expr -> Expr MULT Expr] with [None,'*',None] and goto state 34
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 34
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Type ID ASSIGN Expr . LexToken(BAR,'|',32,293)
+Action : Reduce rule [Var -> Type ID ASSIGN Expr] with [None,'mult','=',None] and goto state 9
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 9
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Var . LexToken(BAR,'|',32,293)
+Action : Shift and goto state 20
+
+State  : 20
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Var BAR . LexToken(SPEAK,'speak',35,342)
+Action : Reduce rule [VarDecl -> Var BAR] with [None,'|'] and goto state 94
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 94
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl VarDecl . LexToken(SPEAK,'speak',35,342)
+Action : Reduce rule [Empty -> <empty>] with [] and goto state 95
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 95
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl VarDecl Empty . LexToken(SPEAK,'speak',35,342)
+Action : Reduce rule [R_VarDecl -> Empty] with [None] and goto state 115
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 115
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl VarDecl R_VarDecl . LexToken(SPEAK,'speak',35,342)
+Action : Reduce rule [R_VarDecl -> VarDecl R_VarDecl] with [None,None] and goto state 115
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 115
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl R_VarDecl . LexToken(SPEAK,'speak',35,342)
+Action : Reduce rule [R_VarDecl -> VarDecl R_VarDecl] with [None,None] and goto state 115
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 115
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl R_VarDecl . LexToken(SPEAK,'speak',35,342)
+Action : Reduce rule [R_VarDecl -> VarDecl R_VarDecl] with [None,None] and goto state 115
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 115
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl R_VarDecl . LexToken(SPEAK,'speak',35,342)
+Action : Reduce rule [R_VarDecl -> VarDecl R_VarDecl] with [None,None] and goto state 93
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 93
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl . LexToken(SPEAK,'speak',35,342)
+Action : Shift and goto state 114
+
+State  : 114
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK . LexToken(MINUS,'-',35,347)
+Action : Shift and goto state 131
+
+State  : 131
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS . LexToken(ID,'mult',35,348)
+Action : Shift and goto state 33
+
+State  : 33
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS ID . LexToken(BAR,'|',35,352)
+Action : Reduce rule [LValue -> ID] with ['mult'] and goto state 37
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS LValue . LexToken(BAR,'|',35,352)
+Action : Reduce rule [Expr -> LValue] with [None] and goto state 108
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 108
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS Expr . LexToken(BAR,'|',35,352)
+Action : Reduce rule [Empty -> <empty>] with [] and goto state 125
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 125
+Defaulted state 125: Reduce using 68
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS Expr Empty . LexToken(BAR,'|',35,352)
+Action : Reduce rule [R_Expr -> Empty] with [None] and goto state 123
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 123
+Defaulted state 123: Reduce using 66
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS Expr R_Expr . LexToken(BAR,'|',35,352)
+Action : Reduce rule [R_Expr -> Expr R_Expr] with [None,None] and goto state 137
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 137
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS R_Expr . LexToken(BAR,'|',35,352)
+Action : Shift and goto state 141
+
+State  : 141
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS R_Expr BAR . LexToken(LPAREN,')',36,356)
+Action : Reduce rule [PrintStmt -> SPEAK MINUS R_Expr BAR] with ['speak','-',None,'|'] and goto state 106
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 106
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl PrintStmt . LexToken(LPAREN,')',36,356)
+Action : Reduce rule [Stmt -> PrintStmt] with [None] and goto state 99
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 99
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl Stmt . LexToken(LPAREN,')',36,356)
+Action : Reduce rule [Empty -> <empty>] with [] and goto state 100
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 100
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl Stmt Empty . LexToken(LPAREN,')',36,356)
+Action : Reduce rule [R_Stmt -> Empty] with [None] and goto state 121
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 121
+Defaulted state 121: Reduce using 37
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl Stmt R_Stmt . LexToken(LPAREN,')',36,356)
+Action : Reduce rule [R_Stmt -> Stmt R_Stmt] with [None,None] and goto state 98
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 98
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl R_Stmt . LexToken(LPAREN,')',36,356)
+Action : Shift and goto state 120
+
+State  : 120
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl R_Stmt LPAREN . LexToken(COLON,':',37,373)
+Action : Reduce rule [StmtBlock -> RPAREN R_VarDecl R_Stmt LPAREN] with ['(',None,None,')'] and goto state 73
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 73
+Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS StmtBlock . LexToken(COLON,':',37,373)
+Action : Reduce rule [FuncDecl -> BONE ID MINUS Formals MINUS StmtBlock] with ['bone','doMath','-',None,'-',None] and goto state 27
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 27
+Stack  : WOOF ID COLON FuncDecl . LexToken(COLON,':',37,373)
+Action : Reduce rule [Field -> FuncDecl] with [None] and goto state 25
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 25
+Stack  : WOOF ID COLON Field . LexToken(COLON,':',37,373)
+Action : Shift and goto state 47
+
+State  : 47
+Stack  : WOOF ID COLON Field COLON . $end
+Action : Reduce rule [ClassDecl -> WOOF ID COLON Field COLON] with ['woof','basicMath',':',None,':'] and goto state 3
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 3
+Stack  : ClassDecl . $end
+Action : Reduce rule [Decl -> ClassDecl] with [None] and goto state 2
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 2
+Stack  : Decl . $end
+Action : Reduce rule [Program -> Decl] with [None] and goto state 1
+Result : <NoneType @ 0x55f844016dc0> (None)
+
+State  : 1
+Stack  : Program . $end
+Done   : Returning <NoneType @ 0x55f844016dc0> (None)
+PLY: PARSE DEBUG END
+===Finished Parsing===

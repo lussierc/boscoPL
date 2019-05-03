@@ -17,11 +17,9 @@ the `test` folder.
 To run the scanner/parser combo for the Bosco programming langauge, first ensure
 Python3 is installed on your machine.
 
-Then navigate to the `src` directory.
-
 Finally, to run the scanner/parser, run the command below:
 ```
-python3 parse_bosco.py FILENAME.bsco
+python3 src/parse_bosco.py test/FILENAME.bsco
 ```
 
 ### Example Run
@@ -30,7 +28,7 @@ directory, first follow the steps above.
 
 For running the project with `basicSyntax.bsco` use the command:
 ```
-python3 parse_bosco.py ../test/sampleprog1.bsco
+python3 src/parse_bosco.py test/sampleprog1.bsco
 ```
 
 ## Project File Organization

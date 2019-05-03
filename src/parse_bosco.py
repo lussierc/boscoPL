@@ -255,7 +255,7 @@ while True:
 try:
     debug=int(sys.argv[2])
 except:
-    debug=0
+    debug=1
 print("=======Parsing=======")
 parser = yacc.yacc()
 

@@ -1,9 +1,9 @@
 # reserved keywords
 reserved = {
-    'int' : 'INT', 'double' : 'DOUBLE', 'bool' : 'BOOL', 'string' : 'STRING',
+    'treat' : 'TREAT', 'double' : 'DOUBLE', 'goodboi' : 'GOODBOI', 'noise' : 'NOISE',
     'woof' : 'WOOF', 'null' : 'NULL', 'dig' : 'DIG', 'if' : 'IF', 'else' : 'ELSE',
     'return' : 'RETURN', 'break' : 'BREAK', 'speak' : 'SPEAK', 'bone' : 'BONE',
-    'FetchInt' : 'FETCHINT', 'FetchLine' : 'FETCHLINE'
+    'FetchTreat' : 'FETCHTREAT', 'FetchNoise' : 'FETCHNOISE'
 }
 
 # tokens that will be used for operations and organization of code
@@ -21,16 +21,16 @@ def t_DOUBLE(t):
     return t
 
 # define the values that can be in an int
-def t_INT(t):
+def t_TREAT(t):
     r'[0-9]+'
     return t
 
 # defines the values that can make up a string
-def t_STRING(t):
+def t_NOISE(t):
     r'\"(.*?)\"'
     return t
 
-def t_BOOL(t):
+def t_GOODBOI(t):
     r'true\b|false\b'
     return t
 
@@ -124,10 +124,10 @@ def p_R_Var(p):
              | Empty'''
 
 def p_Type(p):
-    '''Type : INT
+    '''Type : TREAT
             | DOUBLE
-            | BOOL
-            | STRING'''
+            | GOODBOI
+            | NOISE'''
 
 def p_Formals(p):
     '''Formals : Var
@@ -197,8 +197,8 @@ def p_Expr_Logic(p):
 def p_Expr(p):
     '''Expr : LValue ASSIGN Expr
             | RPAREN Expr LPAREN
-            | FETCHINT RPAREN LPAREN
-            | FETCHLINE RPAREN LPAREN
+            | FETCHTREAT RPAREN LPAREN
+            | FETCHNOISE RPAREN LPAREN
             | Constant
             | LValue'''
 
@@ -212,10 +212,10 @@ def p_LValue(p):
     '''LValue : ID'''
 
 def p_Constant(p):
-    '''Constant : INT
+    '''Constant : TREAT
                 | DOUBLE
-                | BOOL
-                | STRING
+                | GOODBOI
+                | NOISE
                 | NULL'''
 
 def p_Empty(p):

@@ -1,16 +1,16 @@
 ?? Bosco Language - Sample Program 2
 ?? Contains simple math operations
 woof basicMath:
-  bone doMath -int a, double b, bool c- (
+  bone doMath -treat a, double b, goodboi c- (
     ?? Perform addition:
-    int x = a + b|
-    int y = x + c|
+    treat x = a + b|
+    treat y = x + c|
 
     ?? Perform subtraction:
-    int z = y - a|
+    treat z = y - a|
 
     ?? Perform multiplication:
-    int mult = z * x|
+    treat mult = z * x|
 
     ?? Print the last result to terminal:
     speak-mult|

@@ -1,9 +1,9 @@
 ?? Bosco Language - Sample Program 3
 ?? Usage of dig loop
 woof digLoop:
-  bone useLoop -int z- (
-    int x = 9|
-    int y = z + x|
+  bone useLoop -treat z- (
+    treat x = 9|
+    treat y = z + x|
     dig i = 0| i < y| i = i + 1 (
       speak-"An Iteration!"|
       speak-i|

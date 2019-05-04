@@ -75,19 +75,21 @@ Once we finalized the idea for our project, we completed work in a variety of
 different areas. The first of these areas was creating a grammar for our
 project. We took the time to create a grammar (that Bosco himself would love)
 that contained a lot of whimsical dog-related elements. For example, our
-reserved keywords included `woof`, `bone`, `speak`, `dig`, `int`, `double`,
-`fetch`, and more. For instance, `woof` will be used for classes, `bone` will be
-used for functions, `speak` will be used to print things to the terminal, and
-`dig` will be used as a simple loop (like a for loop). These keywords will play
-a large role in program structure and functionality. Additionally, we also
-decided that `??` would be used to denote single-line comments (because Bosco
-gets a little bit confused sometimes).
+reserved keywords included `woof`, `bone`, `speak`, `dig`, `treat`, `double`,
+`fetch`,`goodboi`, `noise` and more. For instance, `woof` will be used for classes, `bone`
+will be used for functions, `speak` will be used to print things to the
+terminal, and `dig` will be used as a simple loop (like a for loop). In terms
+of types, `treat` represents an integer, `goodboi` represents a boolean, and
+`noise` represents a string. These keywords will play a large role in program
+structure and functionality. Additionally, we also decided that `??` would be
+used to denote single-line comments (because Bosco gets a little bit confused
+sometimes).
 
 Once we completed creating our grammar, we wrote a sample program for the Bosco
 language to get a general idea of how it would function. This first sample
 program, entitled `basicSyntax.bsco` included loops, functions, and variable
-declarations. With this, it included some simple mathematical operations on these
-variables and `speak` statements to print output to the terminal.
+declarations. With this, it included some simple mathematical operations on
+these variables and `speak` statements to print output to the terminal.
 
 After finalizing our grammar and writing a sample program, we began the
 implementation portion of our project. This involved implementing a scanner and
@@ -122,7 +124,6 @@ to the hours we spent trying to figure out what was wrong.
 
 ## Overview of Results
  <!-- Description of your results. Make graphs, tables, snapshot of output, or anything else that can help me understand your results. -->
-
 While completing this project and completing a variety of work, we produced a
 variety of mixed results. The first of these was the successful creation of a
 grammar with dog-related elements.
@@ -146,11 +147,11 @@ BreakStmt ::= break\|
 DigStmt ::= dig Expr| Expr | Expr StmtBlock
 Expr ::= LValue = Expr | Constant | LValue | ( Expr ) | Expr+Expr | Expr-Expr | Expr*Expr | Expr/Expr |
  Expr%Expr | - Expr | Expr < Expr | Expr <= Expr | Expr > Expr | Expr >= Expr | Expr == Expr |
- Expr != Expr | Expr && Expr | Expr || Expr | ! Expr | FetchInteger ( ) | FetchLine ( )
+ Expr != Expr | Expr && Expr | Expr || Expr | ! Expr | FetchTreat ( ) | FetchNoise ( )
 LValue ::= indent (Actuals) | Expr . indent (Actuals)
 Actuals ::= Expr+, | ε
-Type ::= int | double | bool | string
-Constant ::= intConstant | doubleConstant | boolConstant | stringConstant | null
+Type ::= treat | double | goodboi | noise
+Constant ::= treat | double | goodboi | noise | null
 ```
 
 After creating our grammar, we worked to create a scanner and parser utilizing
@@ -248,7 +249,7 @@ To test our scanner and parser we created a few sample programs that showed off
 the main parts of Bosco's grammar and syntax. Here is a snippet of one of the
 sample programs:
 ```
-bone useLoop -int z- (
+bone useLoop -treat z- (
   dig i = z| i < y| i = i + 1 (
     speak-"An Iteration!"|
     speak-i|

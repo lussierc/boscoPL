@@ -6,8 +6,8 @@ This repository contains a work in progress programming language called `Bosco`.
 Named after the lovable dog who roams around the home of the Allegheny College
 Computer Science Department, Bosco is a simple programming language that draws
 inspiration from languages such as Java, Python, and Decaf. Bosco contains many
-dog-related elements and keywords, making it perfect for you or your super-intelligent
-dog to use!
+dog-related elements and keywords, making it perfect for you or your super-
+intelligent dog to use!
 
 The project contains Bosco's grammar as well as a simple scanner and parser to
 test Bosco programs with. Additionally, sample Bosco programs can be found in
@@ -23,12 +23,12 @@ python3 src/parse_bosco.py test/FILENAME.bsco
 ```
 
 ### Example Run
-To run Bosco's scanner/parser with one of the sample programs located in the `test`
-directory, first follow the steps above.
+To run Bosco's scanner/parser while in the main directory with one of the
+sample programs located in the `test` directory, first follow the steps above.
 
 For running the project with `basicSyntax.bsco` use the command:
 ```
-python3 src/parse_bosco.py test/sampleprog1.bsco
+python3 src/parse_bosco.py test/basicSyntax.bsco
 ```
 
 ## Project File Organization

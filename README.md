@@ -23,12 +23,12 @@ python3 src/parse_bosco.py test/FILENAME.bsco
 ```
 
 ### Example Run
-To run Bosco's scanner/parser with one of the sample programs located in the `test`
+To run Bosco's scanner/parser while in the main directory with one of the sample programs located in the `test`
 directory, first follow the steps above.
 
 For running the project with `basicSyntax.bsco` use the command:
 ```
-python3 src/parse_bosco.py test/sampleprog1.bsco
+python3 src/parse_bosco.py test/basicSyntax.bsco
 ```
 
 ## Project File Organization

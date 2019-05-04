@@ -283,5 +283,5 @@ language after constructing our grammar. Additionally, it was also very
 rewarding when we were able to get our scanner to work with our grammar and
 especially when we finally got our parser working correctly after hours of
 debugging. Ultimately, creating a working grammar, scanner, and parser were
-rewarding moments and good learning experience for our group during the
+rewarding moments and a good learning experience for our group during the
 completion of this project.

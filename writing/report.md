@@ -2,21 +2,68 @@
 ### Zachary Andrews, Devin Spitalny, Christian Lussier
 
 ## Introduction
-For our CS401 Final Project, we decided to create a toy programming language, much like the ones discussed in class. When coming up with a name for our simple language, our minds immediately jumped to the lovable dog and unofficial Allegheny Computer Science mascot, Bosco. With this in mind we set about creating our new Bosco programming language, drawing inspiration from other languages such as Java and Python as well as toy languages such as Decaf and C0. We created a basic grammar for our language with dog-related elements, including dog phrases like "woof" and "bone" to add a dog flair of sorts. Additionally, we also took steps to create a simple scanner/parser for our language. When creating Bosco, we tried to create a fun and easy to understand grammar that would work well with our scanner and parser.
+For our CS401 Final Project, we decided to create a toy programming language,
+much like the ones discussed in class. When coming up with a name for our simple
+language, our minds immediately jumped to the lovable dog and unofficial
+Allegheny Computer Science mascot, Bosco. With this in mind, we set about
+creating our new Bosco programming language, drawing inspiration from other
+languages such as Java and Python as well as toy languages such as Decaf and
+C0. We created a basic grammar for our language with dog-related elements,
+including dog phrases like "woof" and "bone" to add a dog flair of sorts.
+Additionally, we also took steps to create a simple scanner/parser for our
+language. When creating Bosco, we tried to create a fun and easy to understand
+grammar that would work well with our scanner and parser.
 
 ## Project Motivation
 <!-- The motivation for your project. Why is the problem you decided to solve important/useful? -->
-When deciding on what to create for our compiler-related CS401 final project, there were a number of motivating factors involved. While in class one day, Professor Jumadinova mentioned the idea of making a programming language for our final project, as it would be compiler-related. Our group was a little tentative on this at first, but we were motivated to pursue this idea because creating our own programming language sounded like a really cool idea. Once we had decided to create a programming language, we were also motivated to make a fun and simple language. Eventually we came up with the idea of naming it Bosco and from there, making a programming language with dog-related elements provided the fun portion of motivation that we were looking for.
+When deciding on what to create for our compiler-related CS401 final project,
+there were a number of motivating factors involved. While in class one day,
+Professor Jumadinova mentioned the idea of making a programming language for our
+final project, as it would be compiler-related. Our group was a little tentative
+on this at first, but we were motivated to pursue this idea because creating our
+own programming language sounded like a really cool idea. Once we had decided to
+create a programming language, we were also motivated to make a fun and simple
+language. Eventually, we came up with the idea of naming it Bosco and from
+there, making a programming language with dog-related elements provided the fun
+portion of motivation that we were looking for.
 
-Additionally, once we had decided to make a toy or mini programming language, we were motivated by many of the toy-programming languages that already existed. "Trump Script" probably motivated us the most in this regard, because it was a fun and playful programming language, based on many of Donald Trump's speaking habits, that kind of exemplified what we wanted our programming language to be in a way (except ours is dog-related instead of Trump-related). We were also motivated by the mini-programming languages that students were using for their compiler labs in class. The one that influenced and motivated us the most was likely Decaf, because we found it cool that it was basically a mini programming language for Java and C#. Additionally, all of the project's group members had used Decaf for their compilers.
+Additionally, once we had decided to make a toy or mini programming language,
+we were motivated by many of the toy-programming languages that already existed.
+"Trump Script" probably motivated us the most in this regard, because it was a
+fun and playful programming language, based on many of Donald Trump's speaking
+habits, that kind of exemplified what we wanted our programming language to be
+in a way (except ours is dog-related instead of Trump-related). We were also
+motivated by the mini-programming languages that students were using for their
+compiler labs in class. The one that influenced and motivated us the most was
+likely Decaf because we found it cool that it was basically a mini programming
+language for Java and C#. Additionally, all of the project's group members had
+used Decaf for their compilers.
 
 ## Background Information
-<!-- Background for the proposed problem. What have others done for it a lready? Include references. -->
-While our programming language doesn't solve a specific, real-world applicable problem, it is an attempt to solve the problem of a lack of fun elements existing in many programming languages. Our group feels that in most mainstream languages, there just aren't many fun elements though this makes sense because these languages are being used for real-world work. Many people seem to feel similarly, as many toy programming languages have been created in recent years.
+<!-- Background for the proposed problem. What have others done for it already? Include references. -->
+While our programming language doesn't solve a specific, real-world applicable
+problem, it is an attempt to solve the problem of a lack of fun elements
+existing in many programming languages. Our group feels that in most mainstream
+languages, there just aren't many fun elements though this makes sense because
+these languages are being used for real-world work. Many people seem to feel
+similarly, as many toy programming languages have been created in recent years.
 
-There actually are already dog-inspired programming languages that are publicly available. However, until the week before the report was due, we had no idea that a dog-related toy programming language existed. Despite this, there is a language called ["DOG"](https://esolangs.org/wiki/DOG) which is very much dog-related. Created by Jeremy Ruten, the programs for this language use commands that are supposed to look like commands that you would give to a dog. For instance, "fetch" is used to add, "drop" is used to subtract, and "bark" is used to print. It is extremely simple, with no real mainstream formatting, unlike that which appears in Java such as the use of brackets ({}) to denote where the body of methods and classes appear.
+There actually are already dog-inspired programming languages that are publicly
+available. However, until the week before the report was due, we had no idea
+that a dog-related toy programming language existed. Despite this, there is a
+language called ["DOG"](https://esolangs.org/wiki/DOG) which is very much
+dog-related. Created by Jeremy Ruten, the programs for this language use
+commands that are supposed to look like commands that you would give to a dog.
+For instance, "fetch" is used to add, "drop" is used to subtract, and "bark" is
+used to print. It is extremely simple, with no real mainstream formatting,
+unlike that which appears in Java such as the use of brackets ({}) to denote
+where the body of methods and classes appear.
 
-As mentioned earlier, one other fun-inspired programming language is Trump Script. Trump Script is based on Donald Trump phrases and speaking habits. While it is not super-functional by any means, it is quite interesting and fun if you follow American politics. In this sense it was a motivation for our program, as it strived to create a fun and real-world relevant programming language.
+As mentioned earlier, one other fun-inspired programming language is Trump
+Script. Trump Script is based on Donald Trump phrases and speaking habits. While
+it is not super-functional by any means, it is quite interesting and fun if you
+follow American politics. In this sense it was a motivation for our program, as
+it strived to create a fun and real-world relevant programming language.
 
 ### References:
 - "DOG" Programming Language: https://esolangs.org/wiki/DOG
@@ -24,18 +71,61 @@ As mentioned earlier, one other fun-inspired programming language is Trump Scrip
 
 ## Overview of Completed Work
 <!-- Detailed description of the work you completed for this project. Without giving a snap- shot of the code you wrote, describe what you implemented and how you implemented it. -->
-Once we finalized the idea for our project, we completed work in a variety of different areas. The first of these areas was creating a grammar for our project. We took the time to create a grammar (that Bosco himself would love) that contained a lot of whimsical dog-related elements. For example, our reserved keywords included `woof`, `bone`, `speak`, `dig`, `int`, `double`, `fetch`, and more. For instance, `woof` will be used for classes, `bone` will be used for functions, `speak` will be used to print things to the terminal, and `dig` will be used as a simple loop (like a for loop). These keywords will play a large role in program structure and functionality. Additionally, we also decided that `??` would be used to denote single-line comments (because Bosco gets a little bit confused sometimes).
+Once we finalized the idea for our project, we completed work in a variety of
+different areas. The first of these areas was creating a grammar for our
+project. We took the time to create a grammar (that Bosco himself would love)
+that contained a lot of whimsical dog-related elements. For example, our
+reserved keywords included `woof`, `bone`, `speak`, `dig`, `int`, `double`,
+`fetch`, and more. For instance, `woof` will be used for classes, `bone` will be
+used for functions, `speak` will be used to print things to the terminal, and
+`dig` will be used as a simple loop (like a for loop). These keywords will play
+a large role in program structure and functionality. Additionally, we also
+decided that `??` would be used to denote single-line comments (because Bosco
+gets a little bit confused sometimes).
 
-Once we completed creating our grammar, we wrote a sample program for the Bosco language to get a general idea of how it would function. This first sample program, entitled `basicSyntax.bsco` included loops, functions, and variable declarations. With this it included some simple mathematical operations on these variables and `speak` statements to print output to the terminal.
+Once we completed creating our grammar, we wrote a sample program for the Bosco
+language to get a general idea of how it would function. This first sample
+program, entitled `basicSyntax.bsco` included loops, functions, and variable
+declarations. With this it included some simple mathematical operations on these
+variables and `speak` statements to print output to the terminal.
 
-After finalizing our grammar and writing a sample program, we began the implementation portion of our project. This involved implementing a scanner and parser for our new Bosco language to use with our created sample programs. To start, we began by determining which language to use for the implementation of our scanner and parser. Eventually we decided to use Python along with PLY (a tool for easier scanning/parsing), as two of the group members had not used Python for their compiler project and were interested in learning more. We first began by defining our reserved keywords and tokens within the Python program. We then began to define the values that could exist within a specified token and the related elements of these tokens. After this, we began to implement our created grammar into the program. We also added error handling and handling for unspecified tokens/elements that may exist in incorrect Bosco programs.
+After finalizing our grammar and writing a sample program, we began the
+implementation portion of our project. This involved implementing a scanner and
+parser for our new Bosco language to use with our created sample programs. To
+start, we began by determining which language to use for the implementation of
+our scanner and parser. Eventually we decided to use Python along with PLY (a
+tool for easier scanning/parsing), as two of the group members had not used
+Python for their compiler project and were interested in learning more. We first
+began by defining our reserved keywords and tokens within the Python program. We
+then began to define the values that could exist within a specified token and
+the related elements of these tokens. After this, we began to implement our
+created grammar into the program. We also added error handling and handling for
+unspecified tokens/elements that may exist in incorrect Bosco programs.
 
-After this we were able to begin testing our scanner with our created sample programs and found that it functioned as intended (more detail about the results of our scanner appear in the next section). After this we activated the parser functionality and ran into a number of issues. For the next week or two, our group met several times to try and fix these parser issues. We did this by having our parser display more advanced errors to see what the bug might have been. Then based on these bugs we would change things in the program relating to these bugs in an attempt to solve them, meaning we used a trial-and-error approach to try and fix these bugs. Additionally, we looked through all of the implementation details of the keywords, grammar, scanner, and parser in the program code several times to look for error-causing code and discrepancies. All in all, every team member spent several hours looking for bugs and attempting to fix issues. Despite this, we were unable to completely fix the parser, leaving it only semi-functional.
+After this we were able to begin testing our scanner with our created sample
+programs and found that it functioned as intended (more detail about the results
+of our scanner appear in the next section). After this we activated the parser
+functionality and ran into a number of issues. For the next week or two, our
+group met several times to try and fix these parser issues. We did this by
+having our parser display more advanced errors to see what the bug might have
+been. Then based on these bugs we would change things in the program relating to
+these bugs in an attempt to solve them, meaning we used a trial-and-error
+approach to try and fix these bugs. Additionally, we looked through all of the
+implementation details of the keywords, grammar, scanner, and parser in the
+program code several times to look for error-causing code and discrepancies.
+This is where we discovered the main source of our issues, a section of our
+grammar was very ambiguous and could lead to incorrect tokens being added to
+the stack which would then be unable to be simplified. To fix this we had to
+make a change to all of the areas in our grammar that matched this kind of
+issue, which after identifying was a very quick and easy process in comparison
+to the hours we spent trying to figure out what was wrong.
 
 ## Overview of Results
  <!-- Description of your results. Make graphs, tables, snapshot of output, or anything else that can help me understand your results. -->
 
-While completing this project and completing a variety of work, we produced a variety of mixed results. The first of these was the successful creation of a grammar with dog-related elements.
+While completing this project and completing a variety of work, we produced a
+variety of mixed results. The first of these was the successful creation of a
+grammar with dog-related elements.
 
 The Bosco Grammar:
 ```
@@ -63,15 +153,22 @@ Type ::= int | double | bool | string
 Constant ::= intConstant | doubleConstant | boolConstant | stringConstant | null
 ```
 
-After creating our grammar, we worked to create a scanner and parser utilizing it. Getting
-the parser to work properly was a hard process that took a lot of trial and error to get
-working. Ultimately, we discovered that the issue we had with our parser was due to how
-we had constructed our grammar. To fix this we modified what we had used for a few of the
-statements that makes up our grammar and made the change in our parser as well. This fixed
-all of the issues we had been having up until that point with the parser and allowed us to
-find other areas that had similar issues.
+After creating our grammar, we worked to create a scanner and parser utilizing
+it. Getting the parser to work properly was a hard process that took a lot of
+trial and error to get working. Ultimately, we discovered that the issue we had
+with our parser was due to how we had constructed our grammar. To fix this we
+modified what we had used for a few of the statements that makes up our grammar
+and made the change in our parser as well. This fixed all of the issues we had
+been having up until that point with the parser and allowed us to find other
+areas that had similar issues.
 
-Here is the current output from running the scanner/parser combination on `basicSyntax.bsco`:
+Below is the current output from running the scanner/parser combination on
+`basicSyntax.bsco`. Please note that the dots in the middle of the parsing
+portion are there for the sake of saving space in the report and that the
+program does parse correctly, the full output for the scanning/parsing of this
+program can be found in `output/output_basicSyntax.txt`.
+
+Sample Output:
 ```
 LexToken(WOOF,'woof',2,42)
 LexToken(ID,'classBosco',2,47)
@@ -127,321 +224,7 @@ State  : 8
 Stack  : WOOF ID COLON BONE . LexToken(ID,'myFunction',13,66)
 Action : Shift and goto state 19
 
-State  : 19
-Stack  : WOOF ID COLON BONE ID . LexToken(MINUS,'-',13,77)
-Action : Shift and goto state 23
-
-State  : 23
-Stack  : WOOF ID COLON BONE ID MINUS . LexToken(MINUS,'-',13,78)
-Action : Reduce rule [Empty -> <empty>] with [] and goto state 32
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 32
-Defaulted state 32: Reduce using 23
-Stack  : WOOF ID COLON BONE ID MINUS Empty . LexToken(MINUS,'-',13,78)
-Action : Reduce rule [Formals -> Empty] with [None] and goto state 30
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 30
-Stack  : WOOF ID COLON BONE ID MINUS Formals . LexToken(MINUS,'-',13,78)
-Action : Shift and goto state 50
-
-State  : 50
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS . LexToken(RPAREN,'(',13,80)
-Action : Shift and goto state 74
-
-State  : 74
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN . LexToken(INT,'int',14,86)
-Action : Shift and goto state 12
-
-State  : 12
-Defaulted state 12: Reduce using 17
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN INT . None
-Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 11
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type . LexToken(ID,'x',14,90)
-Action : Shift and goto state 21
-
-State  : 21
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID . LexToken(ASSIGN,'=',14,92)
-Action : Shift and goto state 24
-
-State  : 24
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN . LexToken(INT,'2',14,94)
-Action : Shift and goto state 42
-
-State  : 42
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN INT . LexToken(BAR,'|',14,95)
-Action : Reduce rule [Constant -> INT] with ['2'] and goto state 41
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 41
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN Constant . LexToken(BAR,'|',14,95)
-Action : Reduce rule [Expr -> Constant] with [None] and goto state 34
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 34
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Type ID ASSIGN Expr . LexToken(BAR,'|',14,95)
-Action : Reduce rule [Var -> Type ID ASSIGN Expr] with [None,'x','=',None] and goto state 9
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 9
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Var . LexToken(BAR,'|',14,95)
-Action : Shift and goto state 20
-
-State  : 20
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN Var BAR . LexToken(INT,'int',15,101)
-Action : Reduce rule [VarDecl -> Var BAR] with [None,'|'] and goto state 94
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 94
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl . LexToken(INT,'int',15,101)
-Action : Shift and goto state 12
-
-State  : 12
-Defaulted state 12: Reduce using 17
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl INT . None
-Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 11
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type . LexToken(ID,'y',15,105)
-Action : Shift and goto state 21
-
-State  : 21
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID . LexToken(ASSIGN,'=',15,107)
-Action : Shift and goto state 24
-
-State  : 24
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN . LexToken(INT,'17',15,109)
-Action : Shift and goto state 42
-
-State  : 42
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN INT . LexToken(BAR,'|',15,111)
-Action : Reduce rule [Constant -> INT] with ['17'] and goto state 41
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 41
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN Constant . LexToken(BAR,'|',15,111)
-Action : Reduce rule [Expr -> Constant] with [None] and goto state 34
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 34
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Type ID ASSIGN Expr . LexToken(BAR,'|',15,111)
-Action : Reduce rule [Var -> Type ID ASSIGN Expr] with [None,'y','=',None] and goto state 9
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 9
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Var . LexToken(BAR,'|',15,111)
-Action : Shift and goto state 20
-
-State  : 20
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl Var BAR . LexToken(INT,'int',16,117)
-Action : Reduce rule [VarDecl -> Var BAR] with [None,'|'] and goto state 94
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 94
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl . LexToken(INT,'int',16,117)
-Action : Shift and goto state 12
-
-State  : 12
-Defaulted state 12: Reduce using 17
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl INT . None
-Action : Reduce rule [Type -> INT] with ['int'] and goto state 11
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 11
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type . LexToken(ID,'z',16,121)
-Action : Shift and goto state 21
-
-State  : 21
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID . LexToken(ASSIGN,'=',16,123)
-Action : Shift and goto state 24
-
-State  : 24
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN . LexToken(ID,'x',16,125)
-Action : Shift and goto state 33
-
-State  : 33
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN ID . LexToken(PLUS,'+',16,127)
-Action : Reduce rule [LValue -> ID] with ['x'] and goto state 37
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 37
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN LValue . LexToken(PLUS,'+',16,127)
-Action : Reduce rule [Expr -> LValue] with [None] and goto state 34
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 34
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr . LexToken(PLUS,'+',16,127)
-Action : Shift and goto state 54
-
-State  : 54
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr PLUS . LexToken(ID,'y',16,129)
-Action : Shift and goto state 33
-
-State  : 33
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr PLUS ID . LexToken(BAR,'|',16,130)
-Action : Reduce rule [LValue -> ID] with ['y'] and goto state 37
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 37
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr PLUS LValue . LexToken(BAR,'|',16,130)
-Action : Reduce rule [Expr -> LValue] with [None] and goto state 76
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 76
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr PLUS Expr . LexToken(BAR,'|',16,130)
-Action : Reduce rule [Expr -> Expr PLUS Expr] with [None,'+',None] and goto state 34
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 34
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Type ID ASSIGN Expr . LexToken(BAR,'|',16,130)
-Action : Reduce rule [Var -> Type ID ASSIGN Expr] with [None,'z','=',None] and goto state 9
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 9
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Var . LexToken(BAR,'|',16,130)
-Action : Shift and goto state 20
-
-State  : 20
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl Var BAR . LexToken(SPEAK,'speak',17,136)
-Action : Reduce rule [VarDecl -> Var BAR] with [None,'|'] and goto state 94
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 94
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl . LexToken(SPEAK,'speak',17,136)
-Action : Reduce rule [Empty -> <empty>] with [] and goto state 95
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 95
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl Empty . LexToken(SPEAK,'speak',17,136)
-Action : Reduce rule [R_VarDecl -> Empty] with [None] and goto state 115
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 115
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl VarDecl R_VarDecl . LexToken(SPEAK,'speak',17,136)
-Action : Reduce rule [R_VarDecl -> VarDecl R_VarDecl] with [None,None] and goto state 115
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 115
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl VarDecl R_VarDecl . LexToken(SPEAK,'speak',17,136)
-Action : Reduce rule [R_VarDecl -> VarDecl R_VarDecl] with [None,None] and goto state 115
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 115
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN VarDecl R_VarDecl . LexToken(SPEAK,'speak',17,136)
-Action : Reduce rule [R_VarDecl -> VarDecl R_VarDecl] with [None,None] and goto state 93
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 93
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl . LexToken(SPEAK,'speak',17,136)
-Action : Shift and goto state 114
-
-State  : 114
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK . LexToken(MINUS,'-',17,141)
-Action : Shift and goto state 131
-
-State  : 131
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS . LexToken(ID,'z',17,142)
-Action : Shift and goto state 33
-
-State  : 33
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS ID . LexToken(BAR,'|',17,143)
-Action : Reduce rule [LValue -> ID] with ['z'] and goto state 37
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 37
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS LValue . LexToken(BAR,'|',17,143)
-Action : Reduce rule [Expr -> LValue] with [None] and goto state 108
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 108
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS Expr . LexToken(BAR,'|',17,143)
-Action : Reduce rule [Empty -> <empty>] with [] and goto state 125
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 125
-Defaulted state 125: Reduce using 68
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS Expr Empty . LexToken(BAR,'|',17,143)
-Action : Reduce rule [R_Expr -> Empty] with [None] and goto state 123
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 123
-Defaulted state 123: Reduce using 66
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS Expr R_Expr . LexToken(BAR,'|',17,143)
-Action : Reduce rule [R_Expr -> Expr R_Expr] with [None,None] and goto state 137
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 137
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS R_Expr . LexToken(BAR,'|',17,143)
-Action : Shift and goto state 141
-
-State  : 141
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl SPEAK MINUS R_Expr BAR . LexToken(LPAREN,')',18,193)
-Action : Reduce rule [PrintStmt -> SPEAK MINUS R_Expr BAR] with ['speak','-',None,'|'] and goto state 106
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 106
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl PrintStmt . LexToken(LPAREN,')',18,193)
-Action : Reduce rule [Stmt -> PrintStmt] with [None] and goto state 99
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 99
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl Stmt . LexToken(LPAREN,')',18,193)
-Action : Reduce rule [Empty -> <empty>] with [] and goto state 100
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 100
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl Stmt Empty . LexToken(LPAREN,')',18,193)
-Action : Reduce rule [R_Stmt -> Empty] with [None] and goto state 121
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 121
-Defaulted state 121: Reduce using 37
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl Stmt R_Stmt . LexToken(LPAREN,')',18,193)
-Action : Reduce rule [R_Stmt -> Stmt R_Stmt] with [None,None] and goto state 98
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 98
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl R_Stmt . LexToken(LPAREN,')',18,193)
-Action : Shift and goto state 120
-
-State  : 120
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS RPAREN R_VarDecl R_Stmt LPAREN . LexToken(COLON,':',19,195)
-Action : Reduce rule [StmtBlock -> RPAREN R_VarDecl R_Stmt LPAREN] with ['(',None,None,')'] and goto state 73
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 73
-Stack  : WOOF ID COLON BONE ID MINUS Formals MINUS StmtBlock . LexToken(COLON,':',19,195)
-Action : Reduce rule [FuncDecl -> BONE ID MINUS Formals MINUS StmtBlock] with ['bone','myFunction','-',None,'-',None] and goto state 27
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 27
-Stack  : WOOF ID COLON FuncDecl . LexToken(COLON,':',19,195)
-Action : Reduce rule [Field -> FuncDecl] with [None] and goto state 25
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 25
-Stack  : WOOF ID COLON Field . LexToken(COLON,':',19,195)
-Action : Shift and goto state 47
-
-State  : 47
-Stack  : WOOF ID COLON Field COLON . $end
-Action : Reduce rule [ClassDecl -> WOOF ID COLON Field COLON] with ['woof','classBosco',':',None,':'] and goto state 3
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 3
-Stack  : ClassDecl . $end
-Action : Reduce rule [Decl -> ClassDecl] with [None] and goto state 2
-Result : <NoneType @ 0x556341168dc0> (None)
-
-State  : 2
-Stack  : Decl . $end
-Action : Reduce rule [Program -> Decl] with [None] and goto state 1
-Result : <NoneType @ 0x556341168dc0> (None)
+....
 
 State  : 1
 Stack  : Program . $end
@@ -449,17 +232,21 @@ Done   : Returning <NoneType @ 0x556341168dc0> (None)
 PLY: PARSE DEBUG END
 ===Finished Parsing===
 ```
-As shown above, the scanner properly recognizes the input tokens existing in the program given
-as an argument. It recognizes unspecified elements and has support for comments. These tokens
-are then utilized by the parser to convert the terminals into larger components of the program.
-The python package we used, PLY, aka Python Lex-Yacc, utilizes LR parsing otherwise known as
-Shift-Reduce parsing. This type of parsing takes the lower level components and builds
-up to the higher level components, ie, a letter, assignment, and a number constant are
-made into a variable, which is then a part of a variable declaration. LR parsing specifically
-checks if the next token to the right is a valid addition to the stack which can then be reduced
-using the grammar rules that have been specified in the parser.
+As shown above, the scanner properly recognizes the input tokens existing in the
+program given as an argument. It recognizes unspecified elements and has support
+for comments. These tokens are then utilized by the parser to convert the
+terminals into larger components of the program. The python package we used,
+PLY, aka Python Lex-Yacc, utilizes LR parsing otherwise known as Shift-Reduce
+parsing. This type of parsing takes the lower level components and builds up to
+the higher level components, ie, a letter, assignment, and a number constant are
+made into a variable, which is then a part of a variable declaration. LR parsing
+specifically checks if the next token to the right is a valid addition to the
+stack which can then be reduced using the grammar rules that have been specified
+in the parser.
 
-To test our scanner and parser we created a few sample programs that showed off the main parts of Bosco's grammar and syntax. Here is a snippet of one of the sample programs:
+To test our scanner and parser we created a few sample programs that showed off
+the main parts of Bosco's grammar and syntax. Here is a snippet of one of the
+sample programs:
 ```
 bone useLoop -int z- (
   dig i = z| i < y| i = i + 1 (
@@ -468,9 +255,32 @@ bone useLoop -int z- (
   )
 )
 ```
-The above snippet contains a function, a `speak` statement to print to the terminal, and a `dig` loop which functions in a similar fashion to a Java for loop.
+The above snippet contains a function, a `speak` statement to print to the
+terminal, and a `dig` loop which functions in a similar fashion to a Java for
+loop.
 
 ## Conclusion
 <!-- Conclusion. Give a short overview of your project and its results. Describe what you learned, what were the biggest challenges and the biggest rewards. -->
 
-For our project we set out to create a simple yet fun programming language called Bosco. We were able to successfully create a grammar that included dog-related elements (in honor of Bosco) and with this grammar we were able to construct sample programs to show how a regular Bosco program would look. Creating the grammar was slightly challenging as we had to be creative and think of how dog-esque elements could be included in a way that made sense. After this, we took steps to create a scanner and parser combination program that would serve as a lexer and parser for the project's grammar. Unfortunately, while our scanner functioned as intended right away, scanning in keywords and tokens with no issue, our parser did not and took a lot of trial and error to get it functional. This was undoubtedly the most challenging portion of the lab because we ran into an number of errors that we could not fix when writing the parser code and instead required us to change our grammar. Despite these challenges, this project provided a variety of rewarding moments to our group. For instance, it was very enjoyable to pursue the novel idea of creating a programming language from scratch and being able to write programs in our language after constructing our grammar. Additionally, it was also very rewarding when we were able to get our scanner to work with our grammar and when we finally got our parser working correctly. Ultimately, creating a grammar and scanner were rewarding moments and good learning experience for our group during the completion of this project.
+For our project we set out to create a simple yet fun programming language
+called Bosco. We were able to successfully create a grammar that included
+dog-related elements (in honor of Bosco) and with this grammar we were able to
+construct sample programs to show how a regular Bosco program would look.
+Creating the grammar was slightly challenging as we had to be creative and think
+of how dog-esque elements could be included in a way that made sense. After
+this, we took steps to create a scanner and parser combination program that
+would serve as a lexer and parser for the project's grammar. Unfortunately,
+while our scanner functioned as intended right away, scanning in keywords and
+tokens with no issue, our parser did not and took a lot of trial and error to
+get it functional. This was undoubtedly the most challenging portion of the lab
+because we ran into an number of errors that we could not fix when writing the
+parser code and instead required us to change our grammar. Despite these
+challenges, this project provided a variety of rewarding moments to our group.
+For instance, it was very enjoyable to pursue the novel idea of creating a
+programming language from scratch and being able to write programs in our
+language after constructing our grammar. Additionally, it was also very
+rewarding when we were able to get our scanner to work with our grammar and
+especially when we finally got our parser working correctly after hours of
+debugging. Ultimately, creating a working grammar, scanner, and parser were
+rewarding moments and good learning experience for our group during the
+completion of this project.

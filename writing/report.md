@@ -62,7 +62,7 @@ where the body of methods and classes appear.
 As mentioned earlier, one other fun-inspired programming language is Trump
 Script. Trump Script is based on Donald Trump phrases and speaking habits. While
 it is not super-functional by any means, it is quite interesting and fun if you
-follow American politics. In this sense it was a motivation for our program, as
+follow American politics. In this sense, it was a motivation for our program, as
 it strived to create a fun and real-world relevant programming language.
 
 ### References:
@@ -86,14 +86,14 @@ gets a little bit confused sometimes).
 Once we completed creating our grammar, we wrote a sample program for the Bosco
 language to get a general idea of how it would function. This first sample
 program, entitled `basicSyntax.bsco` included loops, functions, and variable
-declarations. With this it included some simple mathematical operations on these
+declarations. With this, it included some simple mathematical operations on these
 variables and `speak` statements to print output to the terminal.
 
 After finalizing our grammar and writing a sample program, we began the
 implementation portion of our project. This involved implementing a scanner and
 parser for our new Bosco language to use with our created sample programs. To
 start, we began by determining which language to use for the implementation of
-our scanner and parser. Eventually we decided to use Python along with PLY (a
+our scanner and parser. Eventually, we decided to use Python along with PLY (a
 tool for easier scanning/parsing), as two of the group members had not used
 Python for their compiler project and were interested in learning more. We first
 began by defining our reserved keywords and tokens within the Python program. We
@@ -102,9 +102,9 @@ the related elements of these tokens. After this, we began to implement our
 created grammar into the program. We also added error handling and handling for
 unspecified tokens/elements that may exist in incorrect Bosco programs.
 
-After this we were able to begin testing our scanner with our created sample
+After this, we were able to begin testing our scanner with our created sample
 programs and found that it functioned as intended (more detail about the results
-of our scanner appear in the next section). After this we activated the parser
+of our scanner appear in the next section). Later on, we activated the parser
 functionality and ran into a number of issues. For the next week or two, our
 group met several times to try and fix these parser issues. We did this by
 having our parser display more advanced errors to see what the bug might have
@@ -157,7 +157,7 @@ After creating our grammar, we worked to create a scanner and parser utilizing
 it. Getting the parser to work properly was a hard process that took a lot of
 trial and error to get working. Ultimately, we discovered that the issue we had
 with our parser was due to how we had constructed our grammar. To fix this we
-modified what we had used for a few of the statements that makes up our grammar
+modified what we had used for a few of the statements that make up our grammar
 and made the change in our parser as well. This fixed all of the issues we had
 been having up until that point with the parser and allowed us to find other
 areas that had similar issues.
@@ -262,20 +262,20 @@ loop.
 ## Conclusion
 <!-- Conclusion. Give a short overview of your project and its results. Describe what you learned, what were the biggest challenges and the biggest rewards. -->
 
-For our project we set out to create a simple yet fun programming language
+For our project, we set out to create a simple yet fun programming language
 called Bosco. We were able to successfully create a grammar that included
-dog-related elements (in honor of Bosco) and with this grammar we were able to
+dog-related elements (in honor of Bosco) and with this grammar, we were able to
 construct sample programs to show how a regular Bosco program would look.
 Creating the grammar was slightly challenging as we had to be creative and think
-of how dog-esque elements could be included in a way that made sense. After
+of how dog-related elements could be included in a way that made sense. After
 this, we took steps to create a scanner and parser combination program that
 would serve as a lexer and parser for the project's grammar. Unfortunately,
 while our scanner functioned as intended right away, scanning in keywords and
 tokens with no issue, our parser did not and took a lot of trial and error to
 get it functional. This was undoubtedly the most challenging portion of the lab
-because we ran into an number of errors that we could not fix when writing the
+because we ran into a number of errors that we could not fix when writing the
 parser code and instead required us to change our grammar. Despite these
-challenges, this project provided a variety of rewarding moments to our group.
+challenges, this project provided a variety of rewarding moments for our group.
 For instance, it was very enjoyable to pursue the novel idea of creating a
 programming language from scratch and being able to write programs in our
 language after constructing our grammar. Additionally, it was also very

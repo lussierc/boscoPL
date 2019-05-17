@@ -51,6 +51,6 @@ There is no guarantee that this project will be updated again.
 
 ## Contributors
 Thanks to those who contributed to this project:
-  - Christian Lussier ([See GitHub Profile](https://github.com/lussierc]))
+  - Christian Lussier ([See GitHub Profile](https://github.com/lussierc))
   - Zach Andrews ([See GitHub Profile](https://github.com/ZachAndrews98))
   - Devin Spitalny ([See GitHub Profile](https://github.com/spitalnyd))
